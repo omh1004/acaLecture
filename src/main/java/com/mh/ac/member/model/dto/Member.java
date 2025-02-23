@@ -22,12 +22,14 @@ import java.util.List;
 @Builder
 public class Member implements Serializable , UserDetails {
 
-    private String id;
+    private long acdno;
+    private String acdid;
     private String password;
-    private String name;
+    private String acdname;
+    private String opname;
     private String email;
-    private String address;
-    private String unvName;
+    private String acstate;
+    private String acsubj;
 
 
 
@@ -36,7 +38,7 @@ public class Member implements Serializable , UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> auth = new ArrayList<>();
 
-        if(id.equals("admin")) auth.add(new SimpleGrantedAuthority("admin"));
+        if(acdid.equals("admin")) auth.add(new SimpleGrantedAuthority("admin"));
         auth.add(new SimpleGrantedAuthority("user"));
 
         return auth;
@@ -44,7 +46,7 @@ public class Member implements Serializable , UserDetails {
 
     @Override
     public String getUsername() {
-        return this.id;
+        return this.acdid;
     }
 
     @Override
