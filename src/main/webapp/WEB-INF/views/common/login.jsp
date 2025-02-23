@@ -10,15 +10,15 @@
     </div>
 
     <form class="login-form"action="${pageContext.request.contextPath}/loginend.do" method="post">
-        <input type="text" placeholder="아이디" />
-        <input type="password" placeholder="비밀번호" />
+        <input type="text"  name="userId"  placeholder="아이디" />
+        <input type="password"  name="pw" placeholder="비밀번호" />
 
         <button type="button" class="naver-login-btn">
             네이버로 로그인
         </button>
 
         <div class="login-buttons">
-            <button type="submit" class="login-btn primary">로그인</button>
+            <button  type="submit" class="login-btn primary">로그인</button>
             <button type="button" class="login-btn secondary">취소</button>
         </div>
     </form>
