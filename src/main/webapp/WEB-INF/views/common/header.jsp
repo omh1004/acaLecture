@@ -3,99 +3,130 @@
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <c:set var="loginMember" value="${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal}"/>
 <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>HelloSpring</title>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twilight</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
 
-  <!-- jQuery library -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    .header {
+      padding: 1rem;
+      border-bottom: 1px solid #e0e0e0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-  <!-- Popper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    .header h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
 
-  <!-- Latest compiled JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="${path}/resources/css/style.css"/>
-  <script src="${path}/resources/js/jquery-3.7.0.min.js"></script>
+    .header-right {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .main {
+      max-width: 400px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .school-login {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .school-login img {
+      width: 120px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .login-form input {
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .naver-login-btn {
+      padding: 0.75rem;
+      background-color: #1ec800;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 1rem 0;
+    }
+
+    .login-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .login-btn {
+      flex: 1;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .login-btn.primary {
+      background-color: #f4811f;
+      color: white;
+    }
+
+    .login-btn.secondary {
+      background-color: #e0e0e0;
+      color: #333;
+    }
+
+    .footer {
+      background-color: #333;
+      color: white;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-info {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
 </head>
 <body>
-<div id="container">
-  <header>
-    <p>로그인정보 : ${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal==null}</p>
-    <div id="header-container">
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-
-        <img alt="로고" src="${path}/resources/images/logo-spring.png"
-             width="50px">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse"
-              data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-              aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul	class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="">HOME</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="${path}/demo/demo.do">선생님 찾기</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="${path}/demo/demolist.do">로그인</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="${path}/memo/memolist.do">회원가입</a>
-          </li>
-
-        </ul>
-
-
-
-      </div>
-    </nav>
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog"
-         aria-labelledby="loginModalLabel" aria-hidden="true">
-
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-
-          <div class="modal-header">
-
-            <img src="${path}/resources/img/students.png"/>
-            <h5 class="modal-title" id="loginModalLabel">로그인</h5>
-            <button type="button" class="close"
-                    data-dismiss="modal" aria-label="close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <form action="${pageContext.request.contextPath}/loginend.do" method="post">
-            <div class="modal-body">
-              <input type="text" name="userId" class="form-control"
-                     placeholder="아이디입력" required><br/>
-              <input type="password" name="pw" class="form-control"
-                     placeholder="패스워드입력" required>	<br/>
-              <label><input type="checkbox" name="saveUser">로그인유지</label>
-            </div>
-            <div class="modal-footer">
-
-              <button type="submit" class="btn btn-outline-success">로그인</button>
-              <button type="button" class="btn btn-outline-success"
-                      data-dismiss="modal">취소</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <script>
-        const openChatting=()=>{
-          open("${pageContext.request.contextPath}/chattingpage","_blank","width=400,height=700");
-        }
-    </script>
-  </header>
+<header class="header">
+  <h1>Twilight</h1>
+  <div class="header-right">
+    <span>선생님 찾기</span>
+    <span>로그인</span>
+    <span>회원가입</span>
+  </div>
+</header>

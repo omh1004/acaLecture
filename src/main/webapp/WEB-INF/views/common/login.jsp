@@ -3,31 +3,24 @@
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
-
-<div style="display: flex;justify-content: center">
-    <div>
-        <img alt="로고" src="${path}/resources/img/students.png" height="300px">
+<main class="main">
+    <div class="school-login" >
+        <img src="${path}/resources/img/students.png" style="height: 250px" alt="School Login Icon" />
+        <h2>학원 로그인</h2>
     </div>
-</div>
-<section style="display: flex;justify-content: center">
 
-    <h2>로그인</h2>
-    <div style="width:80%">
-    <form action="${pageContext.request.contextPath}/loginend.do" method="post">
-        <div class="modal-body" >
-            <input type="text" name="userId" class="form-control"
-                   placeholder="아이디입력"  style="display: flex;justify-content: center" required><br/>
-            <input type="password" name="pw" class="form-control"
-                   placeholder="패스워드입력" required>	<br/>
-            <label><input type="checkbox" name="saveUser">로그인유지</label>
-        </div>
-        <div class="modal-footer"  style="display: flex;justify-content: center">
+    <form class="login-form"action="${pageContext.request.contextPath}/loginend.do" method="post">
+        <input type="text" placeholder="아이디" />
+        <input type="password" placeholder="비밀번호" />
 
-            <button type="submit" class="btn btn-outline-success">로그인</button>
-            <button type="button" class="btn btn-outline-success"
-                    data-dismiss="modal">취소</button>
+        <button type="button" class="naver-login-btn">
+            네이버로 로그인
+        </button>
+
+        <div class="login-buttons">
+            <button type="submit" class="login-btn primary">로그인</button>
+            <button type="button" class="login-btn secondary">취소</button>
         </div>
     </form>
-    </div>
-</section>
+</main>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
