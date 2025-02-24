@@ -4,15 +4,23 @@
     <resultMap id="memberMap" type="member">
         <result column="username" property="name"/>
         <result column="hobby" property="hobby" typeHandler="strArr"/>
+        <result column="univname" property="unvName"/>
     </resultMap>
+
+
+
+
     <select id="findMemberById" resultMap="memberMap" parameterType="string">
-        select * from lecturermember where id=#{userId}
+        select * from lecturermember where ID=#{id}
     </select>
-    <insert id="saveMember" parameterType="member">
-        insert into lecturermember values (#{id},#{password}
-                                  ,#{name},
-                                  #{address}
-                                  #{unvname}
-                                  )
+
+<!--    <insert id="saveMember" parameterType="member">-->
+<!--        insert into lecturermember values (1, #{id},#{password},#{name},#{address},#{unvName} )-->
+<!--    </insert>   -->
+
+    <insert id="saveMember" parameterType="com.mh.ac.member.model.dto.Member">
+        INSERT INTO lecturermember (lemNo, id, password, name, email, address, unvname)
+        VALUES (lem_seq.NEXTVAL, #{id}, #{password}, #{name}, #{email}, #{address}, #{unvName})
     </insert>
+
 </mapper>

@@ -11,7 +11,7 @@
   <%--  %>--%>
   <form name="memberEnrollFrm" method="post"
         action="${pageContext.request.contextPath}/member/enrollmemberend.do" >
-    <input type="text" class="form-control" placeholder="아이디 (4글자이상)" name="userId" id="userId_" required>
+    <input type="text" class="form-control" placeholder="아이디 (4글자이상)" name="id" id="userId_" required>
     <input type="password" class="form-control" placeholder="비밀번호" name="password" id="password_" required>
     <input type="password" class="form-control" placeholder="비밀번호확인" id="password2" required>
     <input type="text" class="form-control" placeholder="이름" name="name" id="userName" required>

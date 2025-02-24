@@ -44,9 +44,13 @@ public class MemberController {
         Member member=service.selectMemberById(userId);
 //        passwordEncoder.encode(pw);
         //원본값과 암호화값을 비교하는 메소드를 제공
+
         //passwordEncoder.matches(pw, member.getPassword());
+
 //        if(member==null||!member.getPassword().equals(pw)){
+
         if(member ==null ||!passwordEncoder.matches(pw, member.getPassword())){
+
             //로그인 실패
             model.addAttribute("msg",
                     "아이디와 패스워드가 일치하지 않습니다.");

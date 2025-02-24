@@ -127,6 +127,6 @@
   <div class="header-right">
     <span>선생님 찾기</span>
     <span>로그인</span>
-    <span>회원가입</span>
+    <a href="${path}/member/enrollmember.do">회원가입</a>
   </div>
 </header>
