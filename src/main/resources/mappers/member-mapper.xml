@@ -2,17 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="member">
     <resultMap id="memberMap" type="member">
-        <result column="acsubj" property="acsubj" typeHandler="strArr"/>
+        <result column="username" property="name"/>
+        <result column="hobby" property="hobby" typeHandler="strArr"/>
+        <result column="univname" property="unvName"/>
     </resultMap>
+
+
+
+
     <select id="findMemberById" resultMap="memberMap" parameterType="string">
-        select * from academymember where acdid=#{userId}
+        select * from lecturermember where ID=#{id}
     </select>
-    <insert id="saveMember" parameterType="member">
---         고쳐야 할 것 같아서 주석
---         insert into academymember values (academy_seq.nextval, #{id},#{password}
---                                   ,#{name},
---                                   #{address}
---                                   #{unvname}
---                                   )
+
+<!--    <insert id="saveMember" parameterType="member">-->
+<!--        insert into lecturermember values (1, #{id},#{password},#{name},#{address},#{unvName} )-->
+<!--    </insert>   -->
+
+    <insert id="saveMember" parameterType="com.mh.ac.member.model.dto.Member">
+        INSERT INTO lecturermember (lemNo, id, password, name, email, address, unvname)
+        VALUES (lem_seq.NEXTVAL, #{id}, #{password}, #{name}, #{email}, #{address}, #{unvName})
     </insert>
+
 </mapper>

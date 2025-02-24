@@ -81,7 +81,6 @@
       cursor: pointer;
     }
 
-    /* 기존 스타일 유지... */
     .main {
       max-width: 400px;
       margin: 2rem auto;
@@ -170,6 +169,7 @@
   </style>
 </head>
 <body>
+oyvauj 1234 // hseqqh 1234
 <header class="header">
   <h1>Twilight</h1>
   <div class="header-right">

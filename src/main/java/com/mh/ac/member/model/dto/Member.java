@@ -38,8 +38,9 @@ public class Member implements Serializable , UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> auth = new ArrayList<>();
 
-        if(acdid.equals("admin")) auth.add(new SimpleGrantedAuthority("admin"));
-        auth.add(new SimpleGrantedAuthority("user"));
+       // if(acdid.equals("admin"))
+            auth.add(new SimpleGrantedAuthority("admin"));
+       // auth.add(new SimpleGrantedAuthority("user"));
 
         return auth;
     }
