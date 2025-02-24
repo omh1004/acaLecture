@@ -23,6 +23,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      color:#292929;
     }
 
     .header h1 {
@@ -99,6 +100,7 @@
     }
 
     .footer {
+      min-width:1420px;
       background-color: #333;
       color: white;
       padding: 2rem;
