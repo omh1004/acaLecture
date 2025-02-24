@@ -3,7 +3,6 @@
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <c:set var="loginMember" value="${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal}"/>
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
@@ -34,6 +33,52 @@
     .header-right {
       display: flex;
       gap: 1rem;
+      align-items: center;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      right: 0;
+      margin-top: 0.5rem;
+      border-radius: 4px;
+    }
+
+    .dropdown-content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .dropdown-content li {
+      padding: 0;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      text-decoration: none;
+      padding: 12px 16px;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown.active .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-btn {
+      cursor: pointer;
     }
 
     .main {
@@ -124,11 +169,56 @@
   </style>
 </head>
 <body>
+oyvauj 1234 // hseqqh 1234
 <header class="header">
   <h1>Twilight</h1>
   <div class="header-right">
     <span>선생님 찾기</span>
-    <span>로그인</span>
-    <span>회원가입</span>
+    <div class="dropdown">
+      <span id="loginBtn" class="dropdown-btn">로그인</span>
+      <div class="dropdown-content">
+        <ul>
+          <li><a href="${path}/academy/login">학원인 로그인</a></li>
+          <li><a href="${path}/instructor/login">강사 로그인</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="dropdown">
+      <span id="registerBtn" class="dropdown-btn">회원가입</span>
+      <div class="dropdown-content">
+        <ul>
+          <li><a href="${path}/teacher/register">학원인 회원가입</a></li>
+          <li><a href="${path}/instructor/register">강사 회원가입</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </header>
+
+<script>
+  // 모든 드롭다운 버튼에 이벤트 리스너 추가
+  document.querySelectorAll('.dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      // 다른 모든 드롭다운 닫기
+      document.querySelectorAll('.dropdown').forEach(dropdown => {
+        if (dropdown !== this.parentElement) {
+          dropdown.classList.remove('active');
+        }
+      });
+      // 클릭된 드롭다운 토글
+      this.parentElement.classList.toggle('active');
+      e.stopPropagation();
+    });
+  });
+
+  // 문서 클릭시 모든 드롭다운 닫기
+  document.addEventListener('click', function(event) {
+    if (!event.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown').forEach(dropdown => {
+        dropdown.classList.remove('active');
+      });
+    }
+  });
+</script>
+</body>
+</html>

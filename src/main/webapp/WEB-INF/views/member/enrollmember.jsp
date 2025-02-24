@@ -1,40 +1,172 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-<style>
-  div#enroll-container{width:400px; margin:0 auto; text-align:center;}
-  div#enroll-container input, div#enroll-container select {margin-bottom:10px;}
-</style>
-<div id="enroll-container">
-  <%--  <%--%>
-  <%--    String name=null;--%>
-  <%--    name.length();--%>
-  <%--  %>--%>
-  <form name="memberEnrollFrm" method="post"
-        action="${pageContext.request.contextPath}/member/enrollmemberend.do" >
-    <input type="text" class="form-control" placeholder="아이디 (4글자이상)" name="userId" id="userId_" required>
-    <input type="password" class="form-control" placeholder="비밀번호" name="password" id="password_" required>
-    <input type="password" class="form-control" placeholder="비밀번호확인" id="password2" required>
-    <input type="text" class="form-control" placeholder="이름" name="name" id="userName" required>
-    <input type="number" class="form-control" placeholder="나이" name="age" id="age">
-    <input type="email" class="form-control" placeholder="이메일" name="email" id="email" required>
-    <input type="tel" class="form-control" placeholder="전화번호 (예:01012345678)" name="phone" id="phone" maxlength="11" required>
-    <input type="text" class="form-control" placeholder="주소" name="address" id="address">
-    <select class="form-control" name="gender" required>
-      <option value="" disabled selected>성별</option>
-      <option value="M">남</option>
-      <option value="F">여</option>
-    </select>
-    <div class="form-check-inline form-check">
-      취미 : &nbsp;
-      <input type="checkbox" class="form-check-input" name="hobby" id="hobby0" value="운동"><label for="hobby0" class="form-check-label">운동</label>&nbsp;
-      <input type="checkbox" class="form-check-input" name="hobby" id="hobby1" value="등산"><label for="hobby1" class="form-check-label">등산</label>&nbsp;
-      <input type="checkbox" class="form-check-input" name="hobby" id="hobby2" value="독서"><label for="hobby2" class="form-check-label">독서</label>&nbsp;
-      <input type="checkbox" class="form-check-input" name="hobby" id="hobby3" value="게임"><label for="hobby3" class="form-check-label">게임</label>&nbsp;
-      <input type="checkbox" class="form-check-input" name="hobby" id="hobby4" value="여행"><label for="hobby4" class="form-check-label">여행</label>&nbsp;
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Twilight - 회원가입</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+    .logo-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 5px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .form-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .form-group .hint {
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+    }
+    .checkbox-group {
+      margin: 30px 0;
+    }
+    .checkbox-item {
+      margin: 10px 0;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    .required {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2 class="form-title">회원가입</h2>
+  <form action="/member/enrollermemberend.do" method="post">
+    <div class="form-group">
+      <label>이름<span class="required">*</span></label>
+      <input type="text" name="name" required placeholder="이름 입력">
     </div>
-    <br />
-    <input type="submit" class="btn btn-outline-success" value="가입" >&nbsp;
-    <input type="reset" class="btn btn-outline-success" value="취소">
+
+    <div class="form-group">
+      <label>아이디<span class="required">*</span></label>
+      <input type="text" name="userId" required placeholder="아이디 입력">
+      <p class="hint">영문 또는 영문+숫자 조합으로 6~12자리의 아이디를 입력해주세요.</p>
+    </div>
+
+    <div class="form-group">
+      <label>비밀번호<span class="required">*</span></label>
+      <input type="password" name="password" required placeholder="비밀번호 입력">
+      <p class="hint">영문 또는 영문+숫자 조합으로 6~12자리의 아이디를 입력해주세요.</p>
+    </div>
+
+    <div class="form-group">
+      <label>비밀번호 확인<span class="required">*</span></label>
+      <input type="password" name="passwordConfirm" required placeholder="비밀번호 확인 입력">
+      <p class="hint">비밀번호가 일치하지 않습니다.</p>
+    </div>
+
+    <div class="form-group">
+      <label>이메일<span class="required">*</span></label>
+      <div style="display: flex; gap: 10px;">
+        <input type="text" name="emailPrefix" placeholder="이메일 입력">
+        <select name="emailDomain">
+          <option value="">직접 입력</option>
+          <option value="gmail.com">gmail.com</option>
+          <option value="naver.com">naver.com</option>
+          <option value="daum.net">daum.net</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>연동코드<span class="required">*</span></label>
+      <input type="text" name="connectionCode" placeholder="마케팅을 진행한 연동코드 입력">
+    </div>
+
+    <div class="form-group">
+      <div style="display: flex; gap: 10px;">
+        <select name="university">
+          <option value="">대학교</option>
+        </select>
+        <select name="major">
+          <option value="">학과</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="checkbox-group">
+      <h3>약관 및 개인정보처리방침 동의</h3>
+      <div class="checkbox-item">
+        <input type="checkbox" id="allAgree"> 모두 동의합니다.
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" name="agree1"> [필수]이용약관 동의
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" name="agree2"> [필수]개인정보 수집 및 이용 동의
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" name="agree3"> [필수]본인은 만 14세 이상입니다.
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" name="agree4"> [선택]마케팅 정보 수신 동의
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn">회원 가입</button>
   </form>
 </div>
+
+
+
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
