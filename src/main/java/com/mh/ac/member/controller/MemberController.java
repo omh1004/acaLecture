@@ -39,7 +39,7 @@ public class MemberController {
     public String login(String userId, String pw, Model model){
 //                        HttpSession session) {
 
-
+        System.out.println(userId+pw);
 
         Member member=service.selectMemberById(userId);
 //        passwordEncoder.encode(pw);
