@@ -12,6 +12,9 @@ public class TeacherController {
     public String hire(Model model) {
         // 리스트 가져오는 로직
         // model.addAttribute("hireList","");
-        return "teacher/hire";
+        return "instructor/hire";
     }
+
+
+
 }

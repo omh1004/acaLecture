@@ -169,7 +169,6 @@
   </style>
 </head>
 <body>
-oyvauj 1234 // hseqqh 1234
 <header class="header">
   <h1>Twilight</h1>
   <div class="header-right">
@@ -178,8 +177,8 @@ oyvauj 1234 // hseqqh 1234
       <span id="loginBtn" class="dropdown-btn">로그인</span>
       <div class="dropdown-content">
         <ul>
-          <li><a href="${path}/academy/login">학원인 로그인</a></li>
-          <li><a href="${path}/instructor/login">강사 로그인</a></li>
+          <li><a href="${path}/loginpage?pageId=academy">학원인 로그인</a></li>
+          <li><a href="${path}/loginpage?pageId=instructor">강사 로그인</a></li>
         </ul>
       </div>
     </div>
@@ -187,8 +186,8 @@ oyvauj 1234 // hseqqh 1234
       <span id="registerBtn" class="dropdown-btn">회원가입</span>
       <div class="dropdown-content">
         <ul>
-          <li><a href="${path}/teacher/register">학원인 회원가입</a></li>
-          <li><a href="${path}/instructor/register">강사 회원가입</a></li>
+          <li><a href="${path}/enroll?pageId=instructor">학원인 회원가입</a></li>
+          <li><a href="${path}/enroll?pageId=teacher">강사 회원가입</a></li>
         </ul>
       </div>
     </div>

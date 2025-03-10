@@ -25,7 +25,6 @@
                 login-processing-url="/loginend.do"
                 authentication-success-forward-url="/loginsuccess"
                 authentication-failure-forward-url="/loginfail"
-                login-page="/loginpage"
         />
         <!--
 
@@ -49,11 +48,12 @@
                         access : 차단, 허용여부에 대한 설정(permitAll(), hasAnyAuthority(,))
          -->
 
-        <security:intercept-url pattern="/loginpage" access="permitAll()"/>
+        <security:intercept-url pattern="/academy/login" access="permitAll()"/>
         <security:intercept-url pattern="/resources/**" access="permitAll()"/>
         <security:intercept-url pattern="/logoutsuccess" access="permitAll()"/>
-        <security:intercept-url pattern="/member/enroll*" access="permitAll()"/>
-        <security:intercept-url pattern="/teacher/hire*" access="permitAll()"/>         <!-- 시험용 로그인 완료되면 지워도 됨 -->
+        <security:intercept-url pattern="/teacher/hire*" access="permitAll()"/>
+        <security:intercept-url pattern="/instructor/hire*" access="permitAll()"/> <!-- 시험용 로그인 완료되면 지워도 됨 -->
+        <security:intercept-url pattern="/enroll/*" access="permitAll()"/>
         <security:intercept-url pattern="/*" access="permitAll()"/>                     <!-- 시험용 2 -->
         <security:intercept-url pattern="/memo/**" access="hasAuthority('admin')"/>
         <security:intercept-url pattern="/**" access="hasAnyAuthority('admin','user')"/>

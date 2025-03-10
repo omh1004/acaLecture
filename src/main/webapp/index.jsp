@@ -53,10 +53,15 @@
         display:inline-block;
         width:50%;
     }
+    #content .viewAll-button{
+        display: flex;
+        justify-content: end;
+        margin-right: 17%;
+    }
 </style>
 <section id="content">
     <div class="image">
-        <img src="${path}/resources/images/rectangle-160.png" alt="twilight">
+        <img src="${path}/resources/images/Rectangle-161.png" alt="twilight">
     </div>
     <div class="hirelist">
         <div>
@@ -132,5 +137,13 @@
             </div>
         </div>
     </div>
+    <div class="viewAll-button">
+        <button onclick="viewAll();">VIEW ALL</button>
+    </div>
 </section>
+<script>
+    const viewAll = ()=>{
+        location.assign('${path}/instructor/hirelist');
+    }
+</script>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

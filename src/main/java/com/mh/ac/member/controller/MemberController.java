@@ -37,23 +37,15 @@ public class MemberController {
 
     @RequestMapping("/login.do")
     public String login(String userId, String pw, Model model){
-//                        HttpSession session) {
 
         System.out.println(userId+pw);
 
         Member member=service.selectMemberById(userId);
-//        passwordEncoder.encode(pw);
-        //원본값과 암호화값을 비교하는 메소드를 제공
-
-        //passwordEncoder.matches(pw, member.getPassword());
-
-//        if(member==null||!member.getPassword().equals(pw)){
 
         if(member ==null ||!passwordEncoder.matches(pw, member.getPassword())){
 
             //로그인 실패
-            model.addAttribute("msg",
-                    "아이디와 패스워드가 일치하지 않습니다.");
+            model.addAttribute("msg","아이디와 패스워드가 일치하지 않습니다.");
             model.addAttribute("loc","/");
             return "common/msg";
         }else{
@@ -71,11 +63,7 @@ public class MemberController {
         }
         return "redirect:/";
     }
-    // /member/enrollmember.do -> /WEB-INF/views/member/enrollmember.jsp
-//    @GetMapping("/enrollmember.do")
-//    public String enrollMemberPage(){
-//        return "member/enrollMember";
-//    }
+
     @GetMapping("/enrollmember.do")
     public void enrollmember(@ModelAttribute("member") Member m){
         //logger.debug("회원가입화면 이동");

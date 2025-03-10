@@ -1,13 +1,7 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: tjdwn
-  Date: 25. 2. 23.
-  Time: 오후 7:44
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
+<%@ page language="java" pageEncoding="UTF-8" contentType="text/html; UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
+<jsp:include page="/WEB-INF/views/common/header.jsp"/>
     <title>Twilight - 강사채용</title>
     <style>
         section{
@@ -148,9 +142,6 @@
             cursor:pointer;
         }
     </style>
-</head>
-<body>
-    <jsp:include page="/WEB-INF/views/common/header.jsp"/>
     <section>
         <div id="image">
             <img src="${pageContext.request.contextPath}/resources/images/rectangle-160.png" alt="twilight" width="100%">
@@ -411,40 +402,38 @@
         </div>
         <button onclick="regist()">신청 완료</button>
     </section>
-    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-</body>
-<script>
-    // 일단 화면만 만들자. 이건 나중에 다룰 것!
-    // let date = new Date('2025','01','01');
-    // const calendar = Document.querySelector("#calendar");
-    // while(date.getMonth()===1){
-    //
-    // }
+    <script>
+        // 일단 화면만 만들자. 이건 나중에 다룰 것!
+        // let date = new Date('2025','01','01');
+        // const calendar = Document.querySelector("#calendar");
+        // while(date.getMonth()===1){
+        //
+        // }
 
-    // closure 그냥 생각나서 만듦
-    // const a=()=>{
-    //     let a = 0;
-    //     return ()=>{
-    //         console.log(a++);
-    //     }
-    // }
-    // const b = a();
+        // closure 그냥 생각나서 만듦
+        // const a=()=>{
+        //     let a = 0;
+        //     return ()=>{
+        //         console.log(a++);
+        //     }
+        // }
+        // const b = a();
 
-    // 지금 바꾼다? 다음에 바꾼다?
-    document.querySelectorAll("td").forEach(td=>{
-        td.addEventListener("click",e=>{
-            document.querySelector(".classinfo #datetime").innerText = e.target.lastElementChild.innerText
-                + " " + new Date('2025','01',e.target.lastElementChild.innerText).getDay();
+        // 지금 바꾼다? 다음에 바꾼다?
+        document.querySelectorAll("td").forEach(td=>{
+            td.addEventListener("click",e=>{
+                document.querySelector(".classinfo #datetime").innerText = e.target.lastElementChild.innerText
+                    + " " + new Date('2025','01',e.target.lastElementChild.innerText).getDay();
+            })
         })
-    })
 
-    const regist=()=>{
-        if(confirm("신청하시겠습니까?")){   // controller를 통해 이동하도록 바꾸기
-            location.assign("${pageContext.request.contextPath}");
-            alert("신청 완료되었습니다!");
-        }else{
-            console.log("😴");
+        const regist=()=>{
+            if(confirm("신청하시겠습니까?")){   // controller를 통해 이동하도록 바꾸기
+                location.assign("${pageContext.request.contextPath}");
+                alert("신청 완료되었습니다!");
+            }else{
+                console.log("😴");
+            }
         }
-    }
-</script>
-</html>
+    </script>
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
