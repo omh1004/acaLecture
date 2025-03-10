@@ -15,6 +15,9 @@ public class TeacherController {
         return "instructor/hire";
     }
 
-
+    @GetMapping("/teainfo")
+    public String teainfo(Model model) {
+        return "teacher/teaInfo";
+    }
 
 }

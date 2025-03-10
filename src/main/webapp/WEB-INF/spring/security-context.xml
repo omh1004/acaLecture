@@ -52,6 +52,8 @@
         <security:intercept-url pattern="/resources/**" access="permitAll()"/>
         <security:intercept-url pattern="/logoutsuccess" access="permitAll()"/>
         <security:intercept-url pattern="/teacher/hire*" access="permitAll()"/>
+        <security:intercept-url pattern="/teacher/teainfo" access="permitAll()"/>
+        <security:intercept-url pattern="/instructor/insinfo" access="permitAll()"/>
         <security:intercept-url pattern="/instructor/hire*" access="permitAll()"/> <!-- 시험용 로그인 완료되면 지워도 됨 -->
         <security:intercept-url pattern="/enroll/*" access="permitAll()"/>
         <security:intercept-url pattern="/*" access="permitAll()"/>                     <!-- 시험용 2 -->

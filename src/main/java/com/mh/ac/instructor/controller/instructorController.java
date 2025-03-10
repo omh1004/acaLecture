@@ -24,4 +24,9 @@ public class instructorController {
         return "instructor/hireview";
     }
 
+    @GetMapping("/insinfo")
+    public String insinfo(Model model) {
+        return "instructor/insInfo";
+    }
+
 }
