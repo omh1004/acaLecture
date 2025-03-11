@@ -30,20 +30,26 @@ public class SecurityController {
     public String loginfail(Model model){
         log.debug("로그인실패");
         model.addAttribute("msg","로그인실패");
-        model.addAttribute("loc","/login");
+        model.addAttribute("loc","/loginpage");
         return "common/msg";
     }
 
     @RequestMapping("/loginpage")
-    public String loginpage(Model model){
-        return "common/login";
+    public String loginpage(Model model, String pageId){
+        if(pageId.equals("instructor")){
+            return "common/instructorLogin";
+        }else if(pageId.equals("academy")) {
+            return "common/academyLogin";
+        }
+        return "common/adminLogin";
     }
 
-
-
-    @GetMapping("/enrollmember.do")
-    public String enrollmember(@ModelAttribute("member") Member m){
-        return "/member/enrollmember.jsp";
+    @RequestMapping("/enroll")
+    public String enroll(Model model, String pageId){
+        if (pageId.equals("instructor")){
+            return "instructor/insRegister";
+        }
+        return "teacher/teaRegister";
     }
 
 

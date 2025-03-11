@@ -4,7 +4,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Twilight - 회원가입</title>
+  <title>강사 - 회원가입</title>
   <style>
     * {
       margin: 0;
@@ -90,8 +90,8 @@
 </head>
 <body>
 <div class="container">
-  <h2 class="form-title">회원가입</h2>
-  <form action="/member/enrollermemberend.do" method="post">
+  <h2 class="form-title"> 회원가입</h2>
+  <form action="/teacher/teacherMemberend.do" method="post">
     <div class="form-group">
       <label>이름<span class="required">*</span></label>
       <input type="text" name="name" required placeholder="이름 입력">
@@ -119,7 +119,7 @@
       <label>이메일<span class="required">*</span></label>
       <div style="display: flex; gap: 10px;">
         <input type="text" name="emailPrefix" placeholder="이메일 입력">
-        <select name="emailDomain">
+        <select name="email">
           <option value="">직접 입력</option>
           <option value="gmail.com">gmail.com</option>
           <option value="naver.com">naver.com</option>
@@ -129,18 +129,15 @@
     </div>
 
     <div class="form-group">
-      <label>연동코드<span class="required">*</span></label>
-      <input type="text" name="connectionCode" placeholder="마케팅을 진행한 연동코드 입력">
-    </div>
-
-    <div class="form-group">
       <div style="display: flex; gap: 10px;">
-        <select name="university">
-          <option value="">대학교</option>
-        </select>
-        <select name="major">
-          <option value="">학과</option>
-        </select>
+<%--        <select name="university">--%>
+<%--          <option value="">대학교</option>--%>
+<%--        </select>--%>
+<%--        <select name="major">--%>
+<%--          <option value="">학과</option>--%>
+<%--        </select>--%>
+        <label>출신대학<span class="required">*</span></label>
+        <input type="text" name="unvName">
       </div>
     </div>
 
