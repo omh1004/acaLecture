@@ -5,8 +5,8 @@ target/
 src/main/resources/
 
 
-### 서로간의 xml 파일 공유 금지
 
+### 서로간의 xml 파일 공유 금지
 # IntelliJ 관련 XML 설정 파일 제외
 .idea/*.xml
 
@@ -17,6 +17,10 @@ src/main/resources/mappers/*.xml
 .idea/vcs.xml
 .idea/
 .idea/*
+
+src/main/webapp/WEB-INF/spring/*.xml
+src/main/webapp/WEB-INF/spring/appServlet/*.xml
+src/main/webapp/WEB-INF/views/web.xml
 ##############################
 
 ### IntelliJ IDEA ###
