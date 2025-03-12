@@ -9,5 +9,6 @@
     <typeAliases>
         <typeAlias type="com.mh.ac.teacher.model.dto.Teacher" alias="teacher"/>
         <typeAlias type="com.mh.ac.common.SpringArrayTypeHandler" alias="strArr"/>
+        <typeAlias type="com.mh.ac.instructor.model.dto.Recruit" alias="recruit"/>
     </typeAliases>
 </configuration>

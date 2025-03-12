@@ -242,10 +242,14 @@
                 const intStartDate = new Date('${recruit.intStartDate}');
                 const intEndDate = new Date('${recruit.intEndDate}');
 
-                if(calDate.getMonth()>=intStartDate.getMonth() && calDate.getDate()>=intStartDate.getMonth())
+                if(calDate.getMonth()>=intStartDate.getMonth() && calDate.getDate()>=intStartDate.getDate() &&
+                    calDate.getMonth()<=intEndDate.getMonth() && calDate.getDate()<=intEndDate.getDate()){
                     div.addEventListener("click",()=>{
                         document.getElementById("datetime").innerText = (Number(monthDate[0])+1) + "월 " + monthDate[1] + "일";
                     });
+                }else{
+                    div.setAttribute("class","disabled");
+                }
 
                 div.append(p);
                 td.append(div);

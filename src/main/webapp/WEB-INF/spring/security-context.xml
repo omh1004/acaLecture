@@ -38,9 +38,9 @@
                      logout-success-url : 로그아웃 처리 후 실행할 서비스 URL
                  -->
         <security:logout
-            logout-url="/logout.do"
+                logout-url="/logout.do"
         />
-<!--            logout-success-url="/logoutsuccess"-->
+        <!--            logout-success-url="/logoutsuccess"-->
         <!--
                     요청을 차단/허용할 url설정하기
                     <security:intercept-url>태그를 이용
@@ -55,6 +55,8 @@
         <security:intercept-url pattern="/teacher/teainfo" access="permitAll()"/>
         <security:intercept-url pattern="/instructor/insinfo" access="permitAll()"/>
         <security:intercept-url pattern="/instructor/hire*" access="permitAll()"/> <!-- 시험용 로그인 완료되면 지워도 됨 -->
+        <security:intercept-url pattern="/admin/main" access="permitAll()"/>
+        <security:intercept-url pattern="/admin/teacheradd" access="permitAll()"/>
         <security:intercept-url pattern="/enroll/*" access="permitAll()"/>
         <security:intercept-url pattern="/*" access="permitAll()"/>                     <!-- 시험용 2 -->
         <security:intercept-url pattern="/memo/**" access="hasAuthority('admin')"/>
@@ -76,26 +78,30 @@
          -->
     <bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
     <security:authentication-manager >
-<!--        <security:authentication-provider>-->
-<!--            <security:user-service>-->
-<!--                <security:user name="bslove" authorities="admin" password="$2a$10$Mq4zMOKL9IgL2lJ7lS0.X.5wy8AaKA6lZjVOK7pvV.3iYLgSr6l2G"/>-->
-<!--            </security:user-service>-->
-<!--            <security:password-encoder ref="passwordEncoder"/>-->
-<!--        </security:authentication-provider>-->
+        <!--        <security:authentication-provider>-->
+        <!--            <security:user-service>-->
+        <!--                <security:user name="bslove" authorities="admin" password="$2a$10$Mq4zMOKL9IgL2lJ7lS0.X.5wy8AaKA6lZjVOK7pvV.3iYLgSr6l2G"/>-->
+        <!--            </security:user-service>-->
+        <!--            <security:password-encoder ref="passwordEncoder"/>-->
+        <!--        </security:authentication-provider>-->
         <!--
             UserDetailsService 인터페이스를 구현한 클래스를 선언,
             bean 등록
             스프링 시큐리티에서 쓸 db 인증 인터페이스를 재정의 해서 사용한다.
         -->
         <security:authentication-provider user-service-ref="loginService">
-        <security:password-encoder ref="passwordEncoder"/>
+            <security:password-encoder ref="passwordEncoder"/>
         </security:authentication-provider>
 
     </security:authentication-manager>
-    <bean id="memberdao1" class="com.mh.ac.member.model.dao.MemberDaoImpl"/>
+    <bean id="teacherdao" class="com.mh.ac.teacher.model.dao.TeacherDaoImpl"/>
+    <bean id="instructordao" class="com.mh.ac.instructor.model.dao.InstructorDaoImpl"/>
+    <bean id="admindao" class="com.mh.ac.admin.model.dao.AdminDaoImpl"/>
     <bean id="loginService" class="com.mh.ac.security.model.service.SecurityLoginService">
-        <constructor-arg index="0" ref="memberdao1"/>
-        <constructor-arg index="1" ref="sqlSession"/>
+        <constructor-arg index="0" ref="teacherdao"/>
+        <constructor-arg index="1" ref="instructordao"/>
+        <constructor-arg index="2" ref="admindao"/>
+        <constructor-arg index="3" ref="sqlSession"/>
     </bean>
     <import resource="root-context.xml"/>
 
