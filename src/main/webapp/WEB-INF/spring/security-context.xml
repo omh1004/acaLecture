@@ -55,6 +55,8 @@
         <security:intercept-url pattern="/teacher/teainfo" access="permitAll()"/>
         <security:intercept-url pattern="/instructor/insinfo" access="permitAll()"/>
         <security:intercept-url pattern="/instructor/hire*" access="permitAll()"/> <!-- 시험용 로그인 완료되면 지워도 됨 -->
+        <security:intercept-url pattern="/admin/main" access="permitAll()"/>
+        <security:intercept-url pattern="/admin/teacheradd" access="permitAll()"/>
         <security:intercept-url pattern="/enroll/*" access="permitAll()"/>
         <security:intercept-url pattern="/*" access="permitAll()"/>                     <!-- 시험용 2 -->
         <security:intercept-url pattern="/memo/**" access="hasAuthority('admin')"/>
@@ -92,9 +94,9 @@
         </security:authentication-provider>
 
     </security:authentication-manager>
-    <bean id="memberdao1" class="com.mh.ac.member.model.dao.MemberDaoImpl"/>
+    <bean id="teacherdao1" class="com.mh.ac.teacher.model.dao.TeacherDaoImpl"/>
     <bean id="loginService" class="com.mh.ac.security.model.service.SecurityLoginService">
-        <constructor-arg index="0" ref="memberdao1"/>
+        <constructor-arg index="0" ref="teacherdao1"/>
         <constructor-arg index="1" ref="sqlSession"/>
     </bean>
     <import resource="root-context.xml"/>
