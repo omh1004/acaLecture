@@ -9,5 +9,4 @@ public interface InstructorDao {
 
     Instructor findInstructorById(SqlSession sqlSession, String username);
     public Recruit getRecruitByNo(SqlSession session, long no);
-
 }
