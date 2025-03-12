@@ -47,7 +47,7 @@ public class InstructorController {
     // DAO 추가하고 활성화시키기
     @GetMapping("/hire")
     public String hire(Model model, @RequestParam(value = "no", defaultValue = "0") long no){
-        System.out.println(no);
+        System.out.println(no);     
         Recruit recruit = service.getRecruitByNo(no);
         model.addAttribute("recruit",recruit);
         return "instructor/hire";
