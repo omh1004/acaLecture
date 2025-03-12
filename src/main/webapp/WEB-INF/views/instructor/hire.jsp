@@ -233,10 +233,19 @@
                 const monthDate = calendar[i][j].split("-");
                 p.setAttribute("id",calendar[i][j]);
                 p.innerText = monthDate[1];
+                
+                let calDate;
+                if(Number(monthDate[0])==11){
+                    calDate = new Date((Number(year)-1),Number(monthDate[0]),Number(monthDate[1]));
+                }else calDate = new Date(Number(year),Number(monthDate[0]),Number(monthDate[1]));
 
-                div.addEventListener("click",()=>{
-                    document.getElementById("datetime").innerText = (monthDate[0]+1) + "월 " + monthDate[1] + "일";
-                });
+                const intStartDate = new Date('${recruit.intStartDate}');
+                const intEndDate = new Date('${recruit.intEndDate}');
+
+                if(calDate.getMonth()>=intStartDate.getMonth() && calDate.getDate()>=intStartDate.getMonth())
+                    div.addEventListener("click",()=>{
+                        document.getElementById("datetime").innerText = (Number(monthDate[0])+1) + "월 " + monthDate[1] + "일";
+                    });
 
                 div.append(p);
                 td.append(div);
@@ -266,6 +275,10 @@
                     tr.append(td);
                 }else if(startTime<=12){
                     td.innerText = startTime + ":00";
+                    td.setAttribute("class","choose");
+                    td.addEventListener("click",()=>{
+                        document.getElementById("timer").innerText = td.innerText;
+                    });
                     tr.append(td);
                     startTime++;   
                 }
@@ -281,6 +294,10 @@
                     tr.append(td);
                 }else if(startTime>12){
                     td.innerText = startTime + ":00";
+                    td.setAttribute("class","choose");
+                    td.addEventListener("click",()=>{
+                        document.getElementById("timer").innerText = td.innerText;
+                    });
                     tr.append(td);
                     startTime++;   
                 }
