@@ -23,6 +23,7 @@ public class Instructor implements Serializable, UserDetails {
     private String password;
     private String username;
 
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> auth = new ArrayList<>();
