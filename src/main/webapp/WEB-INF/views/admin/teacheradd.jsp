@@ -126,77 +126,77 @@
                     <td>인제대학교</td>
                     <td>123@naver.com</td>
                     <td>서울시 금천구</td>
-                    <td><button onclick="admission();"></button></td>
+                    <td><button class="status-completed" onclick="admission();">승인</button></td>
                 </tr>
                 <tr>
                     <td>강성민</td>
                     <td>인제대학교</td>
                     <td>123@naver.com</td>
                     <td>서울시 금천구</td>
-                    <td><button onclick="admission();"></button></td>
+                    <td><button class="status-completed" onclick="admission();">승인</button></td>
                 </tr>
                 <tr>
                     <td>강성민</td>
                     <td>인제대학교</td>
                     <td>123@naver.com</td>
                     <td>서울시 금천구</td>
-                    <td><button onclick="admission();"></button></td>
+                    <td><button class="status-completed" onclick="admission();">승인</button></td>
                 </tr>
                 <tr>
                     <td>강성민</td>
                     <td>인제대학교</td>
                     <td>123@naver.com</td>
                     <td>서울시 금천구</td>
-                    <td><button onclick="admission();"></button></td>
+                    <td><button class="status-completed" onclick="admission();">승인</button></td>
                 </tr>
                 <tr>
                     <td>강성민</td>
                     <td>인제대학교</td>
                     <td>123@naver.com</td>
                     <td>서울시 금천구</td>
-                    <td><button onclick="admission();"></button></td>
+                    <td><button class="status-completed" onclick="admission();">승인</button></td>
                 </tr>
                 <tr>
                     <td>강성민</td>
                     <td>인제대학교</td>
                     <td>123@naver.com</td>
                     <td>서울시 금천구</td>
-                    <td><button onclick="admission();"></button></td>
+                    <td><button class="status-completed" onclick="admission();">승인</button></td>
                 </tr>
                 <tr>
                     <td>강성민</td>
                     <td>인제대학교</td>
                     <td>123@naver.com</td>
                     <td>서울시 금천구</td>
-                    <td><button onclick="admission();"></button></td>
+                    <td><button class="status-completed" onclick="admission();">승인</button></td>
                 </tr>
                 <tr>
                     <td>강성민</td>
                     <td>인제대학교</td>
                     <td>123@naver.com</td>
                     <td>서울시 금천구</td>
-                    <td><button onclick="admission();"></button></td>
+                    <td><button class="status-completed" onclick="admission();">승인</button></td>
                 </tr>
                 <tr>
                     <td>강성민</td>
                     <td>인제대학교</td>
                     <td>123@naver.com</td>
                     <td>서울시 금천구</td>
-                    <td><button onclick="admission();"></button></td>
+                    <td><button class="status-completed" onclick="admission();">승인</button></td>
                 </tr>
                 <tr>
                     <td>강성민</td>
                     <td>인제대학교</td>
                     <td>123@naver.com</td>
                     <td>서울시 금천구</td>
-                    <td><button onclick="admission();"></button></td>
+                    <td><button class="status-completed" onclick="admission();">승인</button></td>
                 </tr>
                 <tr>
                     <td>강성민</td>
                     <td>인제대학교</td>
                     <td>123@naver.com</td>
                     <td>서울시 금천구</td>
-                    <td><button onclick="admission();"></button></td>
+                    <td><button class="status-completed" onclick="admission();">승인</button></td>
                 </tr>
                 </tbody>
             </table>
