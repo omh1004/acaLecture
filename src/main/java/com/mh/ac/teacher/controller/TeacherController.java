@@ -8,13 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/teacher")
 public class TeacherController {
-    @GetMapping("/hire")
-    public String hire(Model model) {
-        // 리스트 가져오는 로직
-        // model.addAttribute("hireList","");
-        return "instructor/hire";
-    }
-
     @GetMapping("/teainfo")
     public String teainfo(Model model) {
         return "teacher/teaInfo";
