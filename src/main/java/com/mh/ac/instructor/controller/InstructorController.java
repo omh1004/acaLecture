@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/instructor")
-public class instructorController {
+public class InstructorController {
 
     @GetMapping("/hirelist")
     public String hirelist(Model model) {

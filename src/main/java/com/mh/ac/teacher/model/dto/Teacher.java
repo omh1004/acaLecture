@@ -1,5 +1,4 @@
-package com.mh.ac.member.model.dto;
-
+package com.mh.ac.teacher.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,8 +9,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.io.Serializable;
-import java.sql.Date;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -20,34 +17,25 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Member implements Serializable , UserDetails {
+public class Teacher implements Serializable, UserDetails {
 
-    private long acdno;
-    private String acdid;
+    private String id;
     private String password;
-    private String acdname;
-    private String opname;
-    private String email;
-    private String acstate;
-    private String acsubj;
-
-
-
+    private String username;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> auth = new ArrayList<>();
 
-       // if(acdid.equals("admin"))
-            auth.add(new SimpleGrantedAuthority("admin"));
-       // auth.add(new SimpleGrantedAuthority("user"));
+        if(id.equals("admin")) auth.add(new SimpleGrantedAuthority("admin"));
+        auth.add(new SimpleGrantedAuthority("user"));
 
         return auth;
     }
 
     @Override
     public String getUsername() {
-        return this.acdid;
+        return this.id;
     }
 
     @Override
@@ -69,4 +57,5 @@ public class Member implements Serializable , UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
 }
