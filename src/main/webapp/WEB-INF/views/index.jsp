@@ -59,84 +59,34 @@
         margin-right: 17%;
     }
 </style>
+
 <section id="content">
     <div class="image">
         <img src="${path}/resources/images/Rectangle-161.png" alt="twilight">
     </div>
+
+
     <div class="hirelist">
-        <div>
-            <div>
-                <p>과목</p>
-                <h3>모집 제목</h3>
-            </div>
+        <c:forEach var="board" items="${boardList}">
+
             <div>
                 <div>
-                    <p>위치</p><p>날짜</p>
+                    <h3>${board.recTitle}</h3>
                 </div>
-                <p>모집상태</p>
-            </div>
-        </div>
-        <div>
-            <div>
-                <p>과목</p>
-                <h3>모집 제목</h3>
-            </div>
-            <div>
                 <div>
-                    <p>위치</p><p>날짜</p>
+                    <div>
+                        <p>작성자</p>
+                        <p>날짜</p>
+                    </div>
+                    <div>
+                        <p>${board.recSubj}</p>
+                        <p>${board.intStartDate}</p>
+                    </div>
                 </div>
-                <p>모집상태</p>
             </div>
-        </div>
-        <div>
-            <div>
-                <p>과목</p>
-                <h3>모집 제목</h3>
-            </div>
-            <div>
-                <div>
-                    <p>위치</p><p>날짜</p>
-                </div>
-                <p>모집상태</p>
-            </div>
-        </div>
-        <div>
-            <div>
-                <p>과목</p>
-                <h3>모집 제목</h3>
-            </div>
-            <div>
-                <div>
-                    <p>위치</p><p>날짜</p>
-                </div>
-                <p>모집상태</p>
-            </div>
-        </div>
-        <div>
-            <div>
-                <p>과목</p>
-                <h3>모집 제목</h3>
-            </div>
-            <div>
-                <div>
-                    <p>위치</p><p>날짜</p>
-                </div>
-                <p>모집상태</p>
-            </div>
-        </div>
-        <div>
-            <div>
-                <p>과목</p>
-                <h3>모집 제목</h3>
-            </div>
-            <div>
-                <div>
-                    <p>위치</p><p>날짜</p>
-                </div>
-                <p>모집상태</p>
-            </div>
-        </div>
+        </c:forEach>
     </div>
+
     <div class="viewAll-button">
         <button onclick="viewAll();">VIEW ALL</button>
     </div>
