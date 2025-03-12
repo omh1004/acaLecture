@@ -38,9 +38,9 @@
                      logout-success-url : 로그아웃 처리 후 실행할 서비스 URL
                  -->
         <security:logout
-            logout-url="/logout.do"
+                logout-url="/logout.do"
         />
-<!--            logout-success-url="/logoutsuccess"-->
+        <!--            logout-success-url="/logoutsuccess"-->
         <!--
                     요청을 차단/허용할 url설정하기
                     <security:intercept-url>태그를 이용
@@ -78,19 +78,19 @@
          -->
     <bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
     <security:authentication-manager >
-<!--        <security:authentication-provider>-->
-<!--            <security:user-service>-->
-<!--                <security:user name="bslove" authorities="admin" password="$2a$10$Mq4zMOKL9IgL2lJ7lS0.X.5wy8AaKA6lZjVOK7pvV.3iYLgSr6l2G"/>-->
-<!--            </security:user-service>-->
-<!--            <security:password-encoder ref="passwordEncoder"/>-->
-<!--        </security:authentication-provider>-->
+        <!--        <security:authentication-provider>-->
+        <!--            <security:user-service>-->
+        <!--                <security:user name="bslove" authorities="admin" password="$2a$10$Mq4zMOKL9IgL2lJ7lS0.X.5wy8AaKA6lZjVOK7pvV.3iYLgSr6l2G"/>-->
+        <!--            </security:user-service>-->
+        <!--            <security:password-encoder ref="passwordEncoder"/>-->
+        <!--        </security:authentication-provider>-->
         <!--
             UserDetailsService 인터페이스를 구현한 클래스를 선언,
             bean 등록
             스프링 시큐리티에서 쓸 db 인증 인터페이스를 재정의 해서 사용한다.
         -->
         <security:authentication-provider user-service-ref="loginService">
-        <security:password-encoder ref="passwordEncoder"/>
+            <security:password-encoder ref="passwordEncoder"/>
         </security:authentication-provider>
 
     </security:authentication-manager>
