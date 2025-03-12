@@ -172,7 +172,6 @@
 <header class="header">
   <h1>Twilight</h1>
   <div class="header-right">
-    <span>선생님 찾기</span>
     <div class="dropdown">
       <span id="loginBtn" class="dropdown-btn">로그인</span>
     </div>
