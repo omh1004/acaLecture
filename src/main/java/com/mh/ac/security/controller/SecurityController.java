@@ -38,8 +38,10 @@ public class SecurityController {
     public String loginpage(Model model, String pageId){
         if(pageId.equals("instructor")){
             return "common/instructorLogin";
+        }else if(pageId.equals("academy")) {
+            return "common/academyLogin";
         }
-        return "common/academyLogin";
+        return "common/adminLogin";
     }
 
     @RequestMapping("/enroll")
