@@ -94,10 +94,14 @@
         </security:authentication-provider>
 
     </security:authentication-manager>
-    <bean id="teacherdao1" class="com.mh.ac.teacher.model.dao.TeacherDaoImpl"/>
+    <bean id="teacherdao" class="com.mh.ac.teacher.model.dao.TeacherDaoImpl"/>
+    <bean id="instructordao" class="com.mh.ac.instructor.model.dao.InstructorDaoImpl"/>
+    <bean id="admindao" class="com.mh.ac.admin.model.dao.AdminDaoImpl"/>
     <bean id="loginService" class="com.mh.ac.security.model.service.SecurityLoginService">
-        <constructor-arg index="0" ref="teacherdao1"/>
-        <constructor-arg index="1" ref="sqlSession"/>
+        <constructor-arg index="0" ref="teacherdao"/>
+        <constructor-arg index="1" ref="instructordao"/>
+        <constructor-arg index="2" ref="admindao"/>
+        <constructor-arg index="3" ref="sqlSession"/>
     </bean>
     <import resource="root-context.xml"/>
 
