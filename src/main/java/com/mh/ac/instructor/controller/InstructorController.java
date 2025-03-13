@@ -55,15 +55,8 @@ public class InstructorController {
 
     @GetMapping("/hireteacher")
     public String teacherRecruit(Model model, SupInfo supInfo){
-        // System.out.println(supInfo.getSupNo());
-        // System.out.println(supInfo.getInterviewDate());
-        // System.out.println(supInfo.getInterviewTime());
-        // System.out.println(supInfo.getSelectState());
-        // System.out.println(supInfo.getLemNo());
-        // System.out.println(supInfo.getRecInfoNo());
-
         int result = service.insertSupInfo(supInfo);
-
+        
         return "redirect:/"; // index.jsp로 이동
     }
 }
