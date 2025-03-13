@@ -13,4 +13,6 @@ public interface TeacherDao {
     LectureMember getTeacherByNo(SqlSession session, long no);
     List<SupInfo> getMyRecruits(SqlSession session, long no);
     int cancelHire(SqlSession session, long no);
+    int insertTeacher(SqlSession session, Teacher teacher);
+
 }

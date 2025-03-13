@@ -1,6 +1,5 @@
 package com.mh.ac.teacher.model.dao;
 
-import com.mh.ac.instructor.model.dto.Recruit;
 import com.mh.ac.instructor.model.dto.SupInfo;
 import com.mh.ac.teacher.model.dto.LectureMember;
 import com.mh.ac.teacher.model.dto.Teacher;
@@ -23,13 +22,16 @@ public class TeacherDaoImpl implements TeacherDao {
 
     @Override
     public List<SupInfo> getMyRecruits(SqlSession session, long no){
-        List<SupInfo> a = session.selectList("getMyRecruits",no);
-        System.out.println(a);
-        return a;
+        return session.selectList("getMyRecruits",no);
     }
 
     @Override
     public int cancelHire(SqlSession sessoin, long no){
         return sessoin.delete("cancelHire",no);
+    }
+
+    @Override
+    public int insertTeacher(SqlSession session, Teacher teacher) {
+        return session.insert("teacher.insertTeacher", teacher);
     }
 }
