@@ -5,7 +5,6 @@ import com.mh.ac.instructor.model.dto.Recruit;
 import com.mh.ac.instructor.model.dto.SupInfo;
 
 import org.apache.ibatis.session.SqlSession;
-import org.springframework.stereotype.Repository;
 
 public class InstructorDaoImpl implements InstructorDao {
 
