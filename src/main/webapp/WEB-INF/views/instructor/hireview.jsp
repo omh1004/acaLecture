@@ -44,28 +44,54 @@
 </style>
 
 <section style="min-height: 100%;">
-    <div class="container">
+    <div class="container" style="min-height: 600px;">
         <div>
             <button>수정</button>
             <button>삭제</button>
         </div>
         <table>
             <tr>
-                <th>제목</th>           <!-- 바꾸기 -->
-                <td>${recruit.recTitle}</td>  <!-- ${recruit.recTitle} -->
+                <th>제목</th>
+                <td>${board.recTitle}</td>
                 <th>강의 시작일</th>
-                <td>${recruit.lecStartDate}</td>   <!-- ${ recruit.lecStartDate }-->
+                <td>${board.intStartDate}</td>
                 <th>접수 마감일</th>
-                <td>${recruit.intEndDate}</td>   <!-- ${ recruit.intEndDate }-->
+                <td>${board.intEndDate}</td>
             </tr>
             <tr>
                 <th>시간</th>
-                <td>${recruit.intStartTime}~${recruit.intEndTime}</td>    <!-- ${ recruit.intStartTime } -->
-                <th>장소</th>           <!-- ${ recruit.intEndTime } -->
-                <td>${recruit.recSubj}</td>  <!-- ${ recruit.recSubj }-->
-                <th>대상</th>
-                <td>${recruit.lecTarget}</td>       <!-- ${ recruit.lecTarget }-->
+                <td>09:00~18:00</td>
+                <th>장소</th>
+                <td>${board.intState}</td>
+                <th>급여</th>
+                <td>${board.salary}</td>
             </tr>
+            <tr>
+                <th>강의 유형</th>
+                <td>
+                    <c:choose>
+                        <c:when test="${board.lectureType eq '대면강의'}">대면강의</c:when>
+                        <c:otherwise>비대면강의</c:otherwise>
+                    </c:choose>
+                </td>
+            </tr>
+
+        <%--            <tr>--%>
+<%--                <th>제목</th>           <!-- 바꾸기 -->--%>
+<%--                <td>${recruit.recTitle}</td>  <!-- ${recruit.recTitle} -->--%>
+<%--                <th>강의 시작일</th>--%>
+<%--                <td>${recruit.lecStartDate}</td>   <!-- ${ recruit.lecStartDate }-->--%>
+<%--                <th>접수 마감일</th>--%>
+<%--                <td>${recruit.intEndDate}</td>   <!-- ${ recruit.intEndDate }-->--%>
+<%--            </tr>--%>
+<%--            <tr>--%>
+<%--                <th>시간</th>--%>
+<%--                <td>${recruit.intStartTime}~${recruit.intEndTime}</td>    <!-- ${ recruit.intStartTime } -->--%>
+<%--                <th>장소</th>           <!-- ${ recruit.intEndTime } -->--%>
+<%--                <td>${recruit.recSubj}</td>  <!-- ${ recruit.recSubj }-->--%>
+<%--                <th>대상</th>--%>
+<%--                <td>${recruit.lecTarget}</td>       <!-- ${ recruit.lecTarget }-->--%>
+<%--            </tr>--%>
         </table>
         <div class="image-container">
             <p>${recruit.recContent}</p>

@@ -14,4 +14,6 @@ public class Board {
     private String salary; // 급여 정보
     private int acDno; // 학원 번호
     private String intState; // 모집 상태
+    private String recContent; // 게시글
+    private String lectureType;// 대면강의 비대면 강의 구분
 }
