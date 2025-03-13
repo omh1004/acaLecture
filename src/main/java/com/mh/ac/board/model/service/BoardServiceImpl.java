@@ -47,4 +47,14 @@ public class BoardServiceImpl implements BoardService {
     public List<Board> getLatestBoards() {
         return boardDao.getLatestBoards(session);
     }
+
+    @Override
+    public List<Board> getHireList() {  // ✅ DB에서 채용 공고 가져오기
+        return boardDao.getHireList(session);
+    }
+
+    @Override
+    public Board getBoardByRecNo(int recNo) {   // 해당 게시물로 이동
+        return boardDao.getBoardByRecNo(session, recNo);
+    }
 }
