@@ -29,6 +29,10 @@ public class InstructorController {
 
     @GetMapping("/hireview")
     public String hireview(Model model) {
+        double testDouble = Math.floor(Math.random()*10);
+        int testRecNo = (int)(testDouble);
+        Recruit recruit = service.getRecruitByNo(testRecNo);
+        model.addAttribute("recruit",recruit);
         return "instructor/hireview";
     }
 
