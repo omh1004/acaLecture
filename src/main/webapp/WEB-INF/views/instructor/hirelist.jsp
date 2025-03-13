@@ -77,15 +77,16 @@
     </style>
     <section>
         <div class="container">
+            <%= request.getAttribute("boardList") %>
             <button class="btn-search" onclick="hireAdd();">구인 등록</button>
             <table>
                 <thead>
                 <tr>
-                    <th>선정업체정보</th>
+                    <th>선외문의정보</th>
                     <th>지역</th>
-                    <th>검토 시작일</th>
-                    <th>준공일</th>
-                    <th>제한마감일</th>
+                    <th>강의 시작일</th>
+                    <th>등록일</th>
+                    <th>제안마감일</th>
                     <th>구분</th>
                 </tr>
                 </thead>

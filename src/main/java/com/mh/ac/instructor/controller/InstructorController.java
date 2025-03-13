@@ -17,10 +17,8 @@ import lombok.RequiredArgsConstructor;
 public class InstructorController {
     private final InstructorService service;
 
-    @GetMapping("/hirelist")
-    public String hirelist(Model model) {
-        return "instructor/hirelist";
-    }
+//    @GetMapping("/hirelist")
+//    public String hirelist(Model model) { return "instructor/hirelist"; }
 
     @GetMapping("/hireaddpage")
     public String hireadd(Model model) {
