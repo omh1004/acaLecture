@@ -20,4 +20,7 @@ public class Recruit {
   int salary;
   int acdNo;
   String intState;
+  String recContent;
+  String lecStartDate;
+  String lecTarget;
 }

@@ -5,7 +5,7 @@
 
 <main class="main" style="min-height: 100%;">
     <div class="school-login" >
-        <img src="${path}/resources/images/students.png" style="height: 250px" alt="School Login Icon" />
+        <img src="${path}/resources/images/students.png" style="width:280px; height: 250px" alt="School Login Icon" />
         <h2>학원 로그인</h2>
     </div>
 

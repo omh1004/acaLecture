@@ -6,7 +6,6 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
         }
         .container {
             max-width: 900px;

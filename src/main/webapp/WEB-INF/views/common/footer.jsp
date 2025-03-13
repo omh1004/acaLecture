@@ -3,7 +3,7 @@
   <div class="footer-content">
     <div class="footer-logo">Twilight</div>
     <div class="footer-info">
-      <div style="display: flex; justify-content: space-between;">
+      <div style="display: flex; flex-grow:1; justify-content: space-between;">
         (주) Twilight<br />
         대표자: 오민현<br />
         사업자번호: 123-12-123456<br />

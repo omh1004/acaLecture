@@ -30,7 +30,8 @@
         height:250px;
         min-height:250px;
         padding:2%;
-        border:1px solid black;
+        border:1px solid #CBC7C7;
+        box-shadow: 5px 5px 3px rgba(0, 0, 10, 0.5);
         text-align:start;
         margin:40px;
     }
@@ -56,7 +57,7 @@
     #content .viewAll-button{
         display: flex;
         justify-content: end;
-        margin-right: 14%;
+        margin-right: 15%;
     }
 
     #viewbtn {
@@ -78,7 +79,7 @@
     <div class="hirelist">
         <c:forEach var="board" items="${boardList}">
 
-            <div>
+            <div class="hirelistbox">
                 <div>
                     <p>${board.recSubj}</p>
                     <h3>${board.recTitle}</h3>
