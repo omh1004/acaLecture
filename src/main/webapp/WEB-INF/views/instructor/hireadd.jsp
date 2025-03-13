@@ -139,8 +139,8 @@
         right: 20px;
       }
     </style>
-    <section>
-      <div class="container">
+    <section style="min-height: 100%;">
+      <div class="container" style="min-height: 700px;">
         <div class="header">
           <h1>구인 등록 글쓰기</h1>
           <button class="register-btn">등록</button>
@@ -168,7 +168,7 @@
             <td>한국사 선생님</td>
             <th>검토 시작일</th>
             <td>2025년 03월 13일</td>
-            <th>참수 마감일</th>
+            <th>마감일</th>
             <td>2025년 03월 16일</td>
           </tr>
           <tr>

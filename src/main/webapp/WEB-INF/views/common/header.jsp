@@ -8,12 +8,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Twilight</title>
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
     }
 
     .header {
@@ -145,7 +150,7 @@
     }
 
     .footer {
-      min-width:1420px;
+      width: 100%;
       background-color: #333;
       color: white;
       padding: 2rem;
@@ -170,7 +175,7 @@
 </head>
 <body>
 <header class="header">
-  <h1>Twilight</h1>
+  <h1 onclick="goMain()">Twilight</h1>
   <div class="header-right">
     <span>선생님 찾기</span>
     <div class="dropdown">
@@ -218,6 +223,10 @@
       });
     }
   });
+
+  const goMain=()=>{
+    location.assign("${pageContext.request.contextPath}/");
+  }
 </script>
 </body>
 </html>

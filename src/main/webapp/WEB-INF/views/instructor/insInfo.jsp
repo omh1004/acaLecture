@@ -97,7 +97,7 @@
     </style>
 </head>
 <body>
-<div class="container">
+<div class="container" style="min-height: 100%;">
     <h1>내 게시물</h1>
 
     <div class="table-wrapper">

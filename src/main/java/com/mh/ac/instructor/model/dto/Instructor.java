@@ -28,6 +28,7 @@ public class Instructor implements Serializable, UserDetails {
     private String acState;
     private String acsubj;
 
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> auth = new ArrayList<>();

@@ -30,7 +30,8 @@
         height:250px;
         min-height:250px;
         padding:2%;
-        border:1px solid black;
+        border:1px solid #CBC7C7;
+        box-shadow: 5px 5px 3px rgba(0, 0, 10, 0.5);
         text-align:start;
         margin:40px;
     }
@@ -56,11 +57,20 @@
     #content .viewAll-button{
         display: flex;
         justify-content: end;
-        margin-right: 17%;
+        margin-right: 15%;
+    }
+
+    #viewbtn {
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 1vw;
+        padding: 1vw 2vw;
+        font-weight: bold;
     }
 </style>
 
-<section id="content">
+<section id="content" style="min-height: 100%;">
     <div class="image">
         <img src="${path}/resources/images/Rectangle-161.png" alt="twilight">
     </div>
@@ -69,27 +79,28 @@
     <div class="hirelist">
         <c:forEach var="board" items="${boardList}">
 
-            <div>
+            <div class="hirelistbox">
                 <div>
+                    <p>${board.recSubj}</p>
                     <h3>${board.recTitle}</h3>
                 </div>
                 <div>
                     <div>
-                        <p>작성자</p>
-                        <p>날짜</p>
+                        <p>${board.intState}</p>
+                        <p>${board.intStartDate}</p>
                     </div>
                     <div>
-                        <p>${board.recSubj}</p>
-                        <p>${board.intStartDate}</p>
+                        <p>${board.intStartTime}</p>
                     </div>
                 </div>
             </div>
         </c:forEach>
     </div>
 
-    <div class="viewAll-button">
-        <button onclick="viewAll();">VIEW ALL</button>
     </div>
+        <div class="viewAll-button">
+        <button id="viewbtn" onclick="viewAll();">VIEW ALL</button>
+        </div>
 </section>
 <script>
     const viewAll = ()=>{

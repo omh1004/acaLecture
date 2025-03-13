@@ -10,7 +10,7 @@
     }
 </style>
 
-    <section>
+    <section style="min-height: 100%;">
         <div class="main">
             <button onclick="teacherAdd();">강사 회원가입 신청</button>
         </div>

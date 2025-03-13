@@ -91,7 +91,7 @@
   </style>
 </head>
 <body>
-<div class="container">
+<div class="container" style="min-height: 100%;">
   <h2 class="form-title">학원인 - 회원가입</h2>
   <form action="${path}/instructor/instructorMemberend" method="post">
     <div class="form-group">

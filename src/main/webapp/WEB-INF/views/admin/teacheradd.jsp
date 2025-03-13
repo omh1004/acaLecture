@@ -75,7 +75,7 @@
             border: none;
         }
     </style>
-    <section>
+    <section style="min-height: 100%;">
         <div class="container">
             <div>
                 <span>강사 회원가입 신청 리스트</span>
