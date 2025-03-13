@@ -37,4 +37,9 @@ public class BoardDaoImpl implements BoardDao {
     public List<Board> getLatestBoards(SqlSession session) {
         return session.selectList("board.getLatestBoards");
     }
+
+    @Override
+    public List<Board> getHireList(SqlSession session) {  // ✅ 채용 공고 리스트 가져오기
+        return session.selectList("board.getHireList");
+    }
 }

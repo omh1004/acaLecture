@@ -77,175 +77,48 @@
     </style>
     <section>
         <div class="container">
-            <%= request.getAttribute("boardList") %>
+
             <button class="btn-search" onclick="hireAdd();">구인 등록</button>
             <table>
                 <thead>
                 <tr>
                     <th>선외문의정보</th>
                     <th>지역</th>
-                    <th>강의 시작일</th>
-                    <th>등록일</th>
-                    <th>제안마감일</th>
+                    <th>면접 가능 시작일</th>
+                    <th>면접 가능 종료일</th>
+                    <th>지역</th>
+                    <th>급여</th>
                     <th>구분</th>
                 </tr>
                 </thead>
                 <tbody>
-                <%--
-                실제 구현시에는 여기서 데이터베이스에서 정보를 가져와 반복문을 사용하여 표시할 수 있습니다.
-                아래는 예시 코드입니다.
-                --%>
-                <%--
-                <c:forEach var="item" items="${auditList}">
+                <c:forEach var="item" items="${hireList}">
                     <tr>
-                        <td>
-                            <div class="blue-text">${item.companyName}</div>
-                            <div>${item.auditTitle}</div>
-                        </td>
-                        <td>${item.region}</td>
-                        <td>${item.startDate}</td>
-                        <td>${item.endDate}</td>
-                        <td>${item.limitDate}</td>
+                        <td class="blue-text">${item.recTitle}</td>
+                        <td>${item.recSubj}</td>
+                        <td>${item.intStartDate}</td>
+                        <td>${item.intEndDate}</td>
+                        <td>${item.intState}</td>
+                        <td>${item.salary}</td>
                         <td>
                             <c:choose>
-                                <c:when test="${item.status eq 'COMPLETED'}">
-                                    <span class="status-completed">배정완료</span>
+                                <c:when test="${item.lectureType eq '대면강의'}">
+                                    <span class="status-completed">대면강의</span>
                                 </c:when>
                                 <c:otherwise>
-                                    <span class="status-canceled">일정취소</span>
+                                    <span class="status-canceled">비대면강의</span>
                                 </c:otherwise>
                             </c:choose>
                         </td>
                     </tr>
                 </c:forEach>
-                --%>
-
-                <%-- 아래는 정적 데이터 예시입니다 --%>
-                <tr>
-                    <td onclick="hireView();">
-                        <div class="blue-text">동신사 / 차지</div>
-                        <div>차시 감사 선정일</div>
-                    </td>
-                    <td>서울</td>
-                    <td>2020년 03월 13일</td>
-                    <td>2020년 07월 19일</td>
-                    <td>2025년 03월 17일</td>
-                    <td><span class="status-completed">배정완료</span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="blue-text">동신사 / 차지</div>
-                        <div>차시 감사 선정일</div>
-                    </td>
-                    <td>서울</td>
-                    <td>2020년 03월 13일</td>
-                    <td>2020년 07월 19일</td>
-                    <td>2025년 03월 17일</td>
-                    <td><span class="status-completed">배정완료</span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="blue-text">동신사 / 차지</div>
-                        <div>차시 감사 선정일</div>
-                    </td>
-                    <td>서울</td>
-                    <td>2022년 03월 13일</td>
-                    <td>2022년 07월 19일</td>
-                    <td>2025년 03월 17일</td>
-                    <td><span class="status-completed">배정완료</span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="blue-text">동신사 / 차지</div>
-                        <div>차시 감사 선정일</div>
-                    </td>
-                    <td>서울</td>
-                    <td>2022년 03월 13일</td>
-                    <td>2022년 07월 19일</td>
-                    <td>2025년 03월 17일</td>
-                    <td><span class="status-completed">배정완료</span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="blue-text">동신사 / 차지</div>
-                        <div>차시 감사 선정일</div>
-                    </td>
-                    <td>서울</td>
-                    <td>2022년 03월 13일</td>
-                    <td>2022년 07월 19일</td>
-                    <td>2025년 03월 17일</td>
-                    <td><span class="status-canceled">일정취소</span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="blue-text">동신사 / 차지</div>
-                        <div>차시 감사 선정일</div>
-                    </td>
-                    <td>서울</td>
-                    <td>2022년 03월 13일</td>
-                    <td>2022년 07월 19일</td>
-                    <td>2025년 03월 17일</td>
-                    <td><span class="status-completed">배정완료</span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="blue-text">동신사 / 차지</div>
-                        <div>차시 감사 선정일</div>
-                    </td>
-                    <td>서울</td>
-                    <td>2022년 03월 13일</td>
-                    <td>2022년 07월 19일</td>
-                    <td>2025년 03월 17일</td>
-                    <td><span class="status-completed">배정완료</span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="blue-text">동신사 / 차지</div>
-                        <div>차시 감사 선정일</div>
-                    </td>
-                    <td>서울</td>
-                    <td>2022년 03월 13일</td>
-                    <td>2022년 07월 19일</td>
-                    <td>2025년 03월 17일</td>
-                    <td><span class="status-completed">배정완료</span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="blue-text">동신사 / 차지</div>
-                        <div>차시 감사 선정일</div>
-                    </td>
-                    <td>서울</td>
-                    <td>2022년 03월 13일</td>
-                    <td>2022년 07월 19일</td>
-                    <td>2025년 03월 17일</td>
-                    <td><span class="status-completed">배정완료</span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="blue-text">동신사 / 차지</div>
-                        <div>차시 감사 선정일</div>
-                    </td>
-                    <td>서울</td>
-                    <td>2022년 03월 13일</td>
-                    <td>2022년 07월 19일</td>
-                    <td>2025년 03월 17일</td>
-                    <td><span class="status-completed">배정완료</span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="blue-text">동신사 / 차지</div>
-                        <div>차시 감사 선정일</div>
-                    </td>
-                    <td>서울</td>
-                    <td>2022년 03월 13일</td>
-                    <td>2022년 07월 19일</td>
-                    <td>2025년 03월 17일</td>
-                    <td><span class="status-completed">배정완료</span></td>
-                </tr>
                 </tbody>
             </table>
 
-            <%-- 페이지네이션 --%>
+
+
+
+        <%-- 페이지네이션 --%>
             <div class="pagination">
                 <a href="#" class="active">1</a>
                 <a href="#">2</a>

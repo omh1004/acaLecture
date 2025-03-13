@@ -80,14 +80,14 @@ public class BoardController {
         System.out.println("boardList size: " + (boardList != null ? boardList.size() : "null"));
         log.info("boardList size: " + (boardList != null ? boardList.size() : "null"));
         model.addAttribute("boardList", boardList);
-        return "index"; // index.jsp로 이동
+        return "/index"; // index.jsp로 이동
     }
 
 //    // 고용 정보 게시판 형태로 뿌려주기sksk
-//    @GetMapping("/instructor/hirelist")
-//    public String hirelist(Model model) {
-//        List<Board> hireList = boardService.getHireList(); // ✅ DB에서 고용 정보 가져오기
-//        model.addAttribute("hireList", hireList); // ✅ JSP로 전달
-//        return "instructor/hirelist"; // ✅ JSP 파일 호출
-//    }
+    @GetMapping("/instructor/hirelist")
+    public String hirelist(Model model) {
+        List<Board> hireList = boardService.getHireList(); // ✅ DB에서 고용 정보 가져오기
+        model.addAttribute("hireList", hireList); // ✅ JSP로 전달
+        return "instructor/hirelist"; // ✅ JSP 파일 호출
+    }
 }

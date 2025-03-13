@@ -12,4 +12,6 @@ public interface BoardService {
 
     // 추가: 최신 게시글 조회
     List<Board> getLatestBoards();
+
+    List<Board> getHireList();   // ✅ 채용 공고 리스트 가져오기 추가
 }

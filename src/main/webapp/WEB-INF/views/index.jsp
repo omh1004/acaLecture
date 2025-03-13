@@ -71,16 +71,16 @@
 
             <div>
                 <div>
+                    <p>${board.recSubj}</p>
                     <h3>${board.recTitle}</h3>
                 </div>
                 <div>
                     <div>
-                        <p>작성자</p>
-                        <p>날짜</p>
+                        <p>${board.intState}</p>
+                        <p>${board.intStartDate}</p>
                     </div>
                     <div>
-                        <p>${board.recSubj}</p>
-                        <p>${board.intStartDate}</p>
+                        <p>${board.intStartTime}</p>
                     </div>
                 </div>
             </div>
