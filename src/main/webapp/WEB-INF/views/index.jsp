@@ -30,7 +30,8 @@
         height:250px;
         min-height:250px;
         padding:2%;
-        border:1px solid black;
+        border:1px solid #CBC7C7;
+        box-shadow: 5px 5px 3px rgba(0, 0, 10, 0.5);
         text-align:start;
         margin:40px;
     }
@@ -78,7 +79,7 @@
     <div class="hirelist">
         <c:forEach var="board" items="${boardList}">
 
-            <div>
+            <div class="hirelistbox">
                 <div>
                     <h3>${board.recTitle}</h3>
                 </div>
