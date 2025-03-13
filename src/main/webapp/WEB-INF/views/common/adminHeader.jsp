@@ -145,7 +145,7 @@
     }
 
     .footer {
-      min-width:1420px;
+      width: 100%;
       background-color: #333;
       color: white;
       padding: 2rem;
