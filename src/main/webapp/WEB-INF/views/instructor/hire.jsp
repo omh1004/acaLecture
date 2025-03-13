@@ -259,8 +259,17 @@
             eCal.append(tr);
         }
 
-        const insStartTime = '10:00';
-        const insEndTime = '18:00';
+        const insStartTime = "${recruit.intStartTime}";
+        const insEndTime = "${recruit.intEndTime}";
+
+        console.log("${recruit.intStartTime}");
+        console.log("${recruit.intEndTime}");
+
+        const testStartTime = "${recruit.intStartTime}";
+        const testEndTime = "${recruit.intEndTime}";
+
+        console.log(Number(testStartTime.split(':')[0]));
+        console.log(Number(testEndTime.split(':')[0]));
 
         let startTime = Number(insStartTime.split(':')[0]);
         const endTime = Number(insEndTime.split(':')[0]);
