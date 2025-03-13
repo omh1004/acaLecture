@@ -14,4 +14,8 @@ public interface BoardService {
     List<Board> getLatestBoards();
 
     List<Board> getHireList();   // ✅ 채용 공고 리스트 가져오기 추가
+
+    Board getBoardByRecNo(int recNo); // 조회한 No를 기준으로 해당 게시물로 이동
+
+
 }

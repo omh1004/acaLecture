@@ -90,4 +90,14 @@ public class BoardController {
         model.addAttribute("hireList", hireList); // ✅ JSP로 전달
         return "instructor/hirelist"; // ✅ JSP 파일 호출
     }
+
+    @GetMapping("/board/hireview")
+    public String hireView(@RequestParam("recNo") int recNo, Model model) {
+        Board board = boardService.getBoardByRecNo(recNo);
+        model.addAttribute("board", board);
+        return "instructor/hireview";  // ✅ JSP 파일 이동
+    }
+
+
+
 }

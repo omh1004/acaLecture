@@ -82,7 +82,7 @@
             <table>
                 <thead>
                 <tr>
-                    <th>선외문의정보</th>
+                    <th>섭외문의정보</th>
                     <th>과목</th>
                     <th>면접 가능 시작일</th>
                     <th>면접 가능 종료일</th>
@@ -94,7 +94,9 @@
                 <tbody>
                 <c:forEach var="item" items="${hireList}">
                     <tr>
-                        <td class="blue-text">${item.recTitle}</td>
+                        <td class="blue-text">
+                            <a href="${path}/board/hireview?recNo=${item.recNo}" class="blue-text">${item.recTitle}</a>
+                        </td>
                         <td>${item.recSubj}</td>
                         <td>${item.intStartDate}</td>
                         <td>${item.intEndDate}</td>

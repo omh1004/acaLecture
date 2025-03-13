@@ -14,4 +14,6 @@ public interface BoardDao {
     // 추가: 최신 게시글 가져오기
     List<Board> getLatestBoards(SqlSession session);
     List<Board> getHireList(SqlSession session); // ✅ 채용 공고 조회
+
+    Board getBoardByRecNo(SqlSession session, int recNo);
 }

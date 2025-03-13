@@ -42,4 +42,10 @@ public class BoardDaoImpl implements BoardDao {
     public List<Board> getHireList(SqlSession session) {  // ✅ 채용 공고 리스트 가져오기
         return session.selectList("board.getHireList");
     }
+
+    @Override
+    public Board getBoardByRecNo( SqlSession session, int recNo) {
+        return session.selectOne("board.getBoardByRecNo", recNo);
+    }
+
 }

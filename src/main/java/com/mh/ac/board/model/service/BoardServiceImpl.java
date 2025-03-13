@@ -53,4 +53,8 @@ public class BoardServiceImpl implements BoardService {
         return boardDao.getHireList(session);
     }
 
+    @Override
+    public Board getBoardByRecNo(int recNo) {   // 해당 게시물로 이동
+        return boardDao.getBoardByRecNo(session, recNo);
+    }
 }
