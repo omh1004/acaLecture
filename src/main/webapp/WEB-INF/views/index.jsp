@@ -68,6 +68,10 @@
         padding: 1vw 2vw;
         font-weight: bold;
     }
+    #subtitle {
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+    }
 </style>
 
 <section id="content" style="min-height: 100%;">
@@ -81,16 +85,17 @@
 
             <div class="hirelistbox">
                 <div>
-                    <h3>${board.recTitle}</h3>
+                    <p id="subtitle">${board.recSubj}</p>
+                    <h3 id="minititle">${board.recTitle}</h3>
                 </div>
                 <div>
                     <div>
-                        <p>작성자</p>
-                        <p>날짜</p>
+                        <p id="author">작성자</p>
+                        <p id="date">날짜</p>
                     </div>
                     <div>
-                        <p>${board.recSubj}</p>
-                        <p>${board.intStartDate}</p>
+                        <p id="sub">${board.recSubj}</p>
+                        <p id="startdata">${board.intStartDate}</p>
                     </div>
                 </div>
             </div>
