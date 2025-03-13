@@ -169,7 +169,7 @@
   </style>
 </head>
 <body>
-<header class="header">
+<header class="header" style="min-height: 100%;">
   <h1>Twilight</h1>
   <div class="header-right">
     <div class="dropdown">

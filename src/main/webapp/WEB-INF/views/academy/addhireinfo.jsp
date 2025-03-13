@@ -68,7 +68,7 @@
     }
   </style>
 </head>
-<body>
+<body style="min-height: 100%;">
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 <div class="form-container">
   <div class="form-title">구인 등록 글쓰기</div>

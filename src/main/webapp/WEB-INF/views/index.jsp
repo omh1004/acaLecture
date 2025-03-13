@@ -56,11 +56,20 @@
     #content .viewAll-button{
         display: flex;
         justify-content: end;
-        margin-right: 17%;
+        margin-right: 14%;
+    }
+
+    #viewbtn {
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 1vw;
+        padding: 1vw 2vw;
+        font-weight: bold;
     }
 </style>
 
-<section id="content">
+<section id="content" style="min-height: 100%;">
     <div class="image">
         <img src="${path}/resources/images/Rectangle-161.png" alt="twilight">
     </div>
@@ -87,9 +96,10 @@
         </c:forEach>
     </div>
 
-    <div class="viewAll-button">
-        <button onclick="viewAll();">VIEW ALL</button>
     </div>
+        <div class="viewAll-button">
+        <button id="viewbtn" onclick="viewAll();">VIEW ALL</button>
+        </div>
 </section>
 <script>
     const viewAll = ()=>{

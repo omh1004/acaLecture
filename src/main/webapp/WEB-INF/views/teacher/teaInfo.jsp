@@ -47,7 +47,7 @@
     }
 </style>
 
-<section class="container">
+<section class="container" style="min-height: 100%;">
     <div class="content">
         <div class="content-title">내 지원목록</div>
         <div class="content-box">
