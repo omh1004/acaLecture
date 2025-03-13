@@ -19,15 +19,20 @@ import java.util.List;
 @Builder
 public class Instructor implements Serializable, UserDetails {
 
-    private String id;
+    private Integer acdNo;
+    private String acdId;
     private String password;
-    private String username;
+    private String email;
+    private String acdName;
+    private String opName;
+    private String acState;
+    private String acsubj;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> auth = new ArrayList<>();
 
-        if(id.equals("admin")) auth.add(new SimpleGrantedAuthority("admin"));
+        if(acdId.equals("admin")) auth.add(new SimpleGrantedAuthority("admin"));
         auth.add(new SimpleGrantedAuthority("user"));
 
         return auth;
@@ -35,7 +40,7 @@ public class Instructor implements Serializable, UserDetails {
 
     @Override
     public String getUsername() {
-        return this.id;
+        return this.acdId;
     }
 
     @Override

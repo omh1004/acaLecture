@@ -5,6 +5,8 @@ import org.apache.ibatis.session.SqlSession;
 
 public interface TeacherDao {
 
-    Teacher findTeacherById(SqlSession session, String username);
+    Teacher findTeacherById(SqlSession session, String id);
+
+    int insertTeacher(SqlSession session, Teacher teacher);
 
 }
