@@ -62,6 +62,7 @@
         <security:intercept-url pattern="/*" access="permitAll()"/>                     <!-- 시험용 2 -->
         <security:intercept-url pattern="/teacher/mypage**" access="permitAll()"/>                     <!-- 시험용 2 -->
         <security:intercept-url pattern="/memo/**" access="hasAuthority('admin')"/>
+        <security:intercept-url pattern="/teacher/cancel**" access="permitAll()"/>
 
 
         <!--   sk_ 게시물 보기 권한 허용!     -->

@@ -16,4 +16,5 @@ public class SupInfo {
   String selectState;
   long lemNo;
   long recInfoNo;
+  Recruit arecruit;
 }

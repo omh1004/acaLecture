@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Service;
 
 import com.mh.ac.instructor.model.dto.Recruit;
+import com.mh.ac.instructor.model.dto.SupInfo;
 import com.mh.ac.teacher.model.dao.TeacherDao;
 import com.mh.ac.teacher.model.dto.LectureMember;
 
@@ -23,7 +24,12 @@ public class TeacherServiceImpl implements TeacherService{
   }
 
   @Override
-  public List<Recruit> getMyRecruits(long no){
+  public List<SupInfo> getMyRecruits(long no){
     return dao.getMyRecruits(session, no);
+  }
+
+  @Override
+  public int cancelHire(long no){
+    return dao.cancelHire(session ,no);
   }
 }
