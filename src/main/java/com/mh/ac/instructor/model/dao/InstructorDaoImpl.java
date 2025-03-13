@@ -17,7 +17,7 @@ public class InstructorDaoImpl implements InstructorDao {
     public Recruit getRecruitByNo(SqlSession session, long no){
         return session.selectOne("getRecruitByNo",no);
     }
-
+    // 아무말
     @Override
     public int insertSupInfo(SqlSession session, SupInfo supInfo){
         return session.insert("insertSupInfo",supInfo);
