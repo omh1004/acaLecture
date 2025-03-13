@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mh.ac.instructor.model.dto.Recruit;
+import com.mh.ac.instructor.model.dto.SupInfo;
 import com.mh.ac.instructor.model.service.InstructorService;
 
 import lombok.RequiredArgsConstructor;
@@ -49,5 +50,19 @@ public class InstructorController {
         Recruit recruit = service.getRecruitByNo(no);
         model.addAttribute("recruit",recruit);
         return "instructor/hire";
+    }
+
+    @GetMapping("/hireteacher")
+    public String teacherRecruit(Model model, SupInfo supInfo){
+        // System.out.println(supInfo.getSupNo());
+        // System.out.println(supInfo.getInterviewDate());
+        // System.out.println(supInfo.getInterviewTime());
+        // System.out.println(supInfo.getSelectState());
+        // System.out.println(supInfo.getLemNo());
+        // System.out.println(supInfo.getRecInfoNo());
+        
+        int result = service.insertSupInfo(supInfo);
+
+        return "index";
     }
 }

@@ -1,7 +1,5 @@
 package com.mh.ac.instructor.model.dto;
 
-import java.sql.Date;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,13 +9,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Recruit {
-  long recNo;
-  String recTitle;
-  String recSubj;
-  String intStartDate;
-  String intEndDate;
-  int salary;
-  int acdNo;
-  String intState;
+public class SupInfo {
+  long supNo;
+  String interviewDate;
+  String interviewTime;
+  String selectState;
+  long lemNo;
+  long recInfoNo;
 }

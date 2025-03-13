@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.mh.ac.instructor.model.dao.InstructorDao;
 import com.mh.ac.instructor.model.dto.Recruit;
+import com.mh.ac.instructor.model.dto.SupInfo;
 
 import lombok.RequiredArgsConstructor;
 
@@ -17,6 +18,13 @@ public class InstructorServiceImpl implements InstructorService{
   @Override
   public Recruit getRecruitByNo(long no){
     Recruit result = dao.getRecruitByNo(session ,no);
+    return result;
+  }
+
+  @Override
+  public int insertSupInfo(SupInfo supInfo){
+    int result = dao.insertSupInfo(session ,supInfo);
+
     return result;
   }
 }

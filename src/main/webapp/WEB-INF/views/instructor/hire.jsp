@@ -318,9 +318,26 @@
         // const b = a();
 
         const regist=()=>{
-            if(confirm("신청하시겠습니까?")){   // controller를 통해 이동하도록 바꾸기
-                location.assign("${pageContext.request.contextPath}");
-                alert("신청 완료되었습니다!");
+            console.log(document.getElementById("datetime").innerText);
+            console.log(document.getElementById("datetime").innerText!='날짜 요일');
+
+            if(document.getElementById("datetime").innerText!='날짜 요일' && 
+                document.getElementById("timer").innerText!='시간'){
+                const year = new Date(Date.now()).getFullYear();
+                const monthDate = document.getElementById("datetime").innerText.split(" ");
+                monthDate[0] = monthDate[0].slice(0,monthDate[0].length-1);
+                monthDate[1] = monthDate[1].slice(0,monthDate[1].length-1);
+                const settingDate = year + "-" + monthDate[0] + "-" + monthDate[1];
+                const settingTime = document.getElementById("timer").innerText;
+                
+                if(confirm("신청하시겠습니까?")){   // controller를 통해 이동하도록 바꾸기
+                    const time = document.getElementById("timer").innerText;
+                    location.assign("${pageContext.request.contextPath}/instructor/hireteacher?InterviewDate="
+                     + settingDate + "&InterviewTime=" + settingTime + "&selectState=" + "${recruit.intState}"
+                     + "&lemNo=1&recInfoNo=" + "${recruit.recNo}");
+                }else{
+                    console.log("😴");
+                }
             }else{
                 console.log("😴");
             }
