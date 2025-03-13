@@ -56,7 +56,7 @@
     #content .viewAll-button{
         display: flex;
         justify-content: end;
-        margin-right: 14%;
+        margin-right: 15%;
     }
 
     #viewbtn {
