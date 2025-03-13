@@ -89,6 +89,7 @@ public class BoardController {
         List<Board> hireList = boardService.getHireList(); // ✅ DB에서 고용 정보 가져오기
         model.addAttribute("hireList", hireList); // ✅ JSP로 전달
         return "instructor/hirelist"; // ✅ JSP 파일 호출
+//        hirelist
     }
 
     @GetMapping("/board/hireview")
