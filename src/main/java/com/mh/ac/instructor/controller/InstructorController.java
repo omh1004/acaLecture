@@ -12,6 +12,7 @@ import com.mh.ac.instructor.model.service.InstructorService;
 
 import lombok.RequiredArgsConstructor;
 
+
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/instructor")
@@ -60,9 +61,9 @@ public class InstructorController {
         // System.out.println(supInfo.getSelectState());
         // System.out.println(supInfo.getLemNo());
         // System.out.println(supInfo.getRecInfoNo());
-        
+
         int result = service.insertSupInfo(supInfo);
 
-        return "index";
+        return "redirect:/"; // index.jsp로 이동
     }
 }
