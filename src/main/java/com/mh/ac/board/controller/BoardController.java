@@ -72,9 +72,8 @@ public class BoardController {
         return result > 0 ? "redirect:/board/list" : "common/error";
     }
 
-    // 메인 페이지에서 최신 게시글 가져오기
+    // 메인 페이지에서 최신 게시글 가져와서 뿌려주자.
     @GetMapping({"/"})
-//    @GetMapping({"/lecture", "/"})
     public String index(Model model) {
         log.info("start");
         List<Board> boardList = boardService.getLatestBoards(); // 최신 게시글 가져오기
@@ -84,4 +83,11 @@ public class BoardController {
         return "index"; // index.jsp로 이동
     }
 
+//    // 고용 정보 게시판 형태로 뿌려주기sksk
+//    @GetMapping("/instructor/hirelist")
+//    public String hirelist(Model model) {
+//        List<Board> hireList = boardService.getHireList(); // ✅ DB에서 고용 정보 가져오기
+//        model.addAttribute("hireList", hireList); // ✅ JSP로 전달
+//        return "instructor/hirelist"; // ✅ JSP 파일 호출
+//    }
 }
