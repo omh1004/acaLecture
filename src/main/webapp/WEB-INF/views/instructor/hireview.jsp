@@ -44,7 +44,7 @@
 </style>
 
 <section style="min-height: 100%;">
-    <div class="container">
+    <div class="container" style="min-height: 600px;">
         <div>
             <button>수정</button>
             <button>삭제</button>
