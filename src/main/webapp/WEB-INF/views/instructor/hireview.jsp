@@ -43,7 +43,7 @@
     }
 </style>
 
-<section>
+<section style="min-height: 100%;">
     <div class="container">
         <div>
             <button>수정</button>

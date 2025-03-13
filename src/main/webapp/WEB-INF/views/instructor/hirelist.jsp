@@ -75,7 +75,7 @@
             border: none;
         }
     </style>
-    <section>
+    <section style="min-height: 100%;">
         <div class="container">
             <%= request.getAttribute("boardList") %>
             <button class="btn-search" onclick="hireAdd();">구인 등록</button>

@@ -139,7 +139,7 @@
         right: 20px;
       }
     </style>
-    <section>
+    <section style="min-height: 100%;">
       <div class="container">
         <div class="header">
           <h1>구인 등록 글쓰기</h1>

@@ -142,7 +142,7 @@
             cursor:pointer;
         }
     </style>
-    <section>
+    <section style="min-height: 100%;">
         <div id="image">
             <img src="${pageContext.request.contextPath}/resources/images/rectangle-160.png" alt="twilight" width="100%">
         </div>
