@@ -70,7 +70,11 @@
         <div class="image-container">
             <img src="/resources/images/image-24.png" alt="보고 자료 이미지" width="400">
         </div>
-        <button class="apply-button">모집 지원</button>
+        <button class="apply-button" onclick="recruitment()">모집 지원</button>
     </div>
-
+    <script>
+        const recruitment=()=>{
+            location.assign("${path}/instructor/hire")
+        }
+    </script>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

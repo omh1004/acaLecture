@@ -2,6 +2,8 @@ package com.mh.ac.board.controller;
 
 import com.mh.ac.board.model.dto.Board;
 import com.mh.ac.board.model.service.BoardService;
+import com.mh.ac.instructor.model.dto.Recruit;
+
 import lombok.extern.log4j.Log4j2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -83,11 +85,12 @@ public class BoardController {
         return "index"; // index.jsp로 이동
     }
 
-//    // 고용 정보 게시판 형태로 뿌려주기sksk
-    @GetMapping("/instructor/hirelist")
-    public String hirelist(Model model) {
-//        List<Board> hireList = boardService.getHireList(); // ✅ DB에서 고용 정보 가져오기
-//        model.addAttribute("hireList", hireList); // ✅ JSP로 전달
-        return "instructor/hirelist"; // ✅ JSP 파일 호출
-    }
+   // 고용 정보 게시판 형태로 뿌려주기sksk
+   @GetMapping("/instructor/hirelist")
+   public String hirelist(Model model, Recruit recruit) {
+        System.out.println(recruit);
+    //    List<Board> hireList = boardService.getHireList(); // ✅ DB에서 고용 정보 가져오기
+    //    model.addAttribute("hireList", hireList); // ✅ JSP로 전달
+       return "instructor/hirelist"; // ✅ JSP 파일 호출
+   }
 }
