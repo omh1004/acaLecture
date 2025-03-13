@@ -51,30 +51,31 @@
         </div>
         <table>
             <tr>
-                <th>제목</th>
-                <td>한국사 선생님</td>
+                <th>제목</th>           <!-- 바꾸기 -->
+                <td>${recruit.recTitle}</td>  <!-- ${recruit.recTitle} -->
                 <th>강의 시작일</th>
-                <td>2023년 03월 13일</td>
+                <td>${recruit.lecStartDate}</td>   <!-- ${ recruit.lecStartDate }-->
                 <th>접수 마감일</th>
-                <td>2025년 03월 10일</td>
+                <td>${recruit.intEndDate}</td>   <!-- ${ recruit.intEndDate }-->
             </tr>
             <tr>
                 <th>시간</th>
-                <td>09:00~18:00</td>
-                <th>장소</th>
-                <td>서울시 금천구</td>
+                <td>${recruit.intStartTime}~${recruit.intEndTime}</td>    <!-- ${ recruit.intStartTime } -->
+                <th>장소</th>           <!-- ${ recruit.intEndTime } -->
+                <td>${recruit.recSubj}</td>  <!-- ${ recruit.recSubj }-->
                 <th>대상</th>
-                <td>고등학생</td>
+                <td>${recruit.lecTarget}</td>       <!-- ${ recruit.lecTarget }-->
             </tr>
         </table>
         <div class="image-container">
+            <p>${recruit.recContent}</p>
             <img src="/resources/images/image-24.png" alt="보고 자료 이미지" width="400">
         </div>
         <button class="apply-button" onclick="recruitment()">모집 지원</button>
     </div>
     <script>
         const recruitment=()=>{
-            location.assign("${path}/instructor/hire")
+            location.assign("${path}/instructor/hire?no=${recruit.recNo}");
         }
     </script>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

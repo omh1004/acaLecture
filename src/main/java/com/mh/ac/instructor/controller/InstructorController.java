@@ -12,6 +12,7 @@ import com.mh.ac.instructor.model.service.InstructorService;
 
 import lombok.RequiredArgsConstructor;
 
+
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/instructor")
@@ -28,6 +29,10 @@ public class InstructorController {
 
     @GetMapping("/hireview")
     public String hireview(Model model) {
+        double testDouble = Math.floor(Math.random()*10);
+        int testRecNo = (int)(testDouble);
+        Recruit recruit = service.getRecruitByNo(testRecNo);
+        model.addAttribute("recruit",recruit);
         return "instructor/hireview";
     }
 
@@ -54,15 +59,8 @@ public class InstructorController {
 
     @GetMapping("/hireteacher")
     public String teacherRecruit(Model model, SupInfo supInfo){
-        // System.out.println(supInfo.getSupNo());
-        // System.out.println(supInfo.getInterviewDate());
-        // System.out.println(supInfo.getInterviewTime());
-        // System.out.println(supInfo.getSelectState());
-        // System.out.println(supInfo.getLemNo());
-        // System.out.println(supInfo.getRecInfoNo());
-        
         int result = service.insertSupInfo(supInfo);
-
-        return "index";
+        
+        return "redirect:/"; // index.jsp로 이동
     }
 }
