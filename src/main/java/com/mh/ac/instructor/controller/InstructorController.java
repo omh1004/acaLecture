@@ -27,10 +27,10 @@ public class InstructorController {
         return "instructor/hireadd";
     }
 
-    @GetMapping("/hireview")
-    public String hireview(Model model) {
-        return "instructor/hireview";
-    }
+    // @GetMapping("/hireview")
+    // public String hireview(Model model) {
+    //     return "instructor/hireview";
+    // }
 
     @GetMapping("/insinfo")
     public String insinfo(Model model) {
