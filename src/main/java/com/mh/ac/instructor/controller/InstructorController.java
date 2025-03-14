@@ -40,8 +40,9 @@ public class InstructorController {
     }
 
     @GetMapping("/findInstructorById")
-    public ResponseEntity<Boolean> findInstructorById(@RequestParam String id) {
+    public ResponseEntity<Boolean> findInstructorById(@RequestParam("id") String id) {
         boolean isSameUserId = instructorService.findInstructorById(id);
+
         return ResponseEntity.ok(isSameUserId);
     }
 

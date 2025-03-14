@@ -24,7 +24,7 @@ public class InstructorServiceImpl implements InstructorService {
 
     @Override
     public boolean findInstructorById(String id) {
-        Instructor ins = instructorDao.findInstructorById(session,id);
+        Instructor ins = instructorDao.findInstructorById(session, id);
         boolean flag = false;
         if(ins != null){
             flag = true;

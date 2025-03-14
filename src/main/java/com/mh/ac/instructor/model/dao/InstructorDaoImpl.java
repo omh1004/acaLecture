@@ -10,6 +10,7 @@ public class InstructorDaoImpl implements InstructorDao {
 
     @Override
     public Instructor findInstructorById(SqlSession session, String id) {
+        System.out.println("InstructorDaoImpl.findInstructorById");
         return session.selectOne("instructor.findInstructorById", id);
     }
 

@@ -187,9 +187,9 @@
 
   async function searchId(){
     let userId = document.getElementsByName("acdId")[0].value;
+
     let response = await fetch('${path}/instructor/findInstructorById?id='+userId);
     let result = await response.json();
-
     if(result){
       isSameUserId = true;
       alert("중복된 아이디입니다.");
