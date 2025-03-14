@@ -52,7 +52,7 @@
                 background-color:#ffffff;
             }
         }
-        section>table td:hover{
+        section>table td.enabled:hover{
             animation:dateSelect 0.1s forwards;
             /*background-color:#66bb6a;*/
         }
@@ -254,6 +254,7 @@
                         document.getElementById("amTime").focus();
                         document.getElementById("datetime").innerText = (Number(monthDate[0])+1) + "월 " + monthDate[1] + "일";
                     });
+                    td.setAttribute("class","enabled");
                 }else{
                     div.setAttribute("class","disabled");
                 }
