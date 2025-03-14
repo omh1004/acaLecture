@@ -78,8 +78,7 @@
 
     <div class="hirelist">
         <c:forEach var="board" items="${boardList}">
-
-            <div class="hirelistbox">
+            <div class="hirelistbox" onclick="location.href='${path}/board/hireview?recNo=${board.recNo}';" style="cursor: pointer;">
                 <div>
                     <p>${board.recSubj}</p>
                     <h3>${board.recTitle}</h3>

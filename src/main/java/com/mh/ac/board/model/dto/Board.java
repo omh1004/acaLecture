@@ -16,4 +16,5 @@ public class Board {
     private String intState; // 모집 상태
     private String recContent; // 게시글
     private String lectureType;// 대면강의 비대면 강의 구분
+    private String lecTarget;
 }

@@ -6,7 +6,7 @@ import java.util.List;
 public interface BoardService {
     List<Board> getAllBoards();
     Board getBoardById(int boardId);
-    int insertBoard(Board board);
+
     int updateBoard(Board board);
     int deleteBoard(int boardId);
 
@@ -17,5 +17,6 @@ public interface BoardService {
 
     Board getBoardByRecNo(int recNo); // 조회한 No를 기준으로 해당 게시물로 이동
 
+    int insertBoard(Board board);
 
 }
