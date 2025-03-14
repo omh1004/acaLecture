@@ -46,4 +46,9 @@ public class InstructorServiceImpl implements InstructorService {
     public int insertSupInfo(SupInfo supInfo){
         return instructorDao.insertSupInfo(session, supInfo);
     }
+    
+    @Override
+    public Instructor searchInstructorById(String id) {
+        return instructorDao.findInstructorById(session,id);
+    }
 }

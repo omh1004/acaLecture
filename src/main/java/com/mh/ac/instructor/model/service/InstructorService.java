@@ -9,4 +9,8 @@ public interface InstructorService {
     int insertInstructor(Instructor instructor);
     Recruit getRecruitByNo(long no);
     int insertSupInfo(SupInfo supInfo);
+
+    
+    Instructor searchInstructorById(String id);
+
 }

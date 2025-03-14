@@ -28,10 +28,6 @@ public class BoardServiceImpl implements BoardService {
         return boardDao.getBoardById(session, boardId);
     }
 
-    @Override
-    public int insertBoard(Board board) {
-        return boardDao.insertBoard(session, board);
-    }
 
     @Override
     public int updateBoard(Board board) {
@@ -56,5 +52,10 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public Board getBoardByRecNo(int recNo) {   // 해당 게시물로 이동
         return boardDao.getBoardByRecNo(session, recNo);
+    }
+
+    @Override
+    public int insertBoard(Board board) {
+        return boardDao.insertBoard(session, board);
     }
 }

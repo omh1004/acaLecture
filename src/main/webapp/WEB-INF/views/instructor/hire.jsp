@@ -110,6 +110,7 @@
         .time table td.choose{
             border:1px solid #eeeeee;
             border-radius:3px;
+            cursor: pointer;
         }
         .classinfo{
             width:75%;
@@ -178,7 +179,7 @@
         </table>
         <div class="time">
             <h5>AM</h5>
-            <table id="amTime">
+            <table id="amTime" tabindex="0" style="outline: none;">
 
             </table>
             <h5>PM</h5>
@@ -250,6 +251,7 @@
                     calDate.getMonth()<=intEndDate.getMonth() && calDate.getDate()<=intEndDate.getDate()){
                     div.setAttribute("class","choice");
                     div.addEventListener("click",()=>{
+                        document.getElementById("amTime").focus();
                         document.getElementById("datetime").innerText = (Number(monthDate[0])+1) + "월 " + monthDate[1] + "일";
                     });
                     td.setAttribute("class","enabled");

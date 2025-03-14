@@ -18,10 +18,6 @@ public class BoardDaoImpl implements BoardDao {
         return session.selectOne("board.getBoardById", boardId);
     }
 
-    @Override
-    public int insertBoard(SqlSession session, Board board) {
-        return session.insert("board.insertBoard", board);
-    }
 
     @Override
     public int updateBoard(SqlSession session, Board board) {
@@ -46,6 +42,11 @@ public class BoardDaoImpl implements BoardDao {
     @Override
     public Board getBoardByRecNo( SqlSession session, int recNo) {
         return session.selectOne("board.getBoardByRecNo", recNo);
+    }
+
+    @Override
+    public int insertBoard(SqlSession session, Board board) {
+        return session.insert("board.insertBoard", board);
     }
 
 }

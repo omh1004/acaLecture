@@ -175,7 +175,7 @@
 </head>
 <body>
 <header class="header">
-  <h1 onclick="location.href='${path}/'">Twilight</h1>
+  <h1 onclick="location.href='${path}/'" style="cursor: pointer;">Twilight</h1>
   <div class="header-right">
     <span>선생님 찾기</span>
     <div class="dropdown">
@@ -183,7 +183,7 @@
       <div class="dropdown-content">
         <ul>
           <li><a href="${path}/loginpage?pageId=academy">학원인 로그인</a></li>
-          <li><a href="${path}/loginpage?pageId=instructor">강사 로그인</a></li>
+          <li><a href="${path}/loginpage?pageId=teacher">강사 로그인</a></li>
         </ul>
       </div>
     </div>

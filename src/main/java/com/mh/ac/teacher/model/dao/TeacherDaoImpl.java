@@ -11,8 +11,8 @@ import org.apache.ibatis.session.SqlSession;
 public class TeacherDaoImpl implements TeacherDao {
 
     @Override
-    public Teacher findTeacherById(SqlSession session, String username) {
-        return null;
+    public Teacher findTeacherById(SqlSession session, String id) {
+        return session.selectOne("teacher.findTeacherById", id);
     }
 
     @Override

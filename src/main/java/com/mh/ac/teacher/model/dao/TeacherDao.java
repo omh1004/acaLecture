@@ -9,7 +9,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 public interface TeacherDao {
-    Teacher findTeacherById(SqlSession session, String username);
+    Teacher findTeacherById(SqlSession session, String id);
     LectureMember getTeacherByNo(SqlSession session, long no);
     List<SupInfo> getMyRecruits(SqlSession session, long no);
     int cancelHire(SqlSession session, long no);
