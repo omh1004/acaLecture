@@ -21,6 +21,7 @@ public class Recruit {
   int acdNo;
   String intState;
   String recContent;
+  String lectureType;
   String lecStartDate;
   String lecTarget;
 }

@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -91,7 +93,7 @@
 <body>
 <div class="container" style="min-height: 100%;">
   <h2 class="form-title"> 회원가입</h2>
-  <form action="/teacher/teacherMemberend.do" method="post">
+  <form action="${path}/teacher/teacherMemberend" method="post">
     <div class="form-group">
       <label>이름<span class="required">*</span></label>
       <input type="text" name="name" required placeholder="이름 입력">
@@ -99,7 +101,7 @@
 
     <div class="form-group">
       <label>아이디<span class="required">*</span></label>
-      <input type="text" name="userId" required placeholder="아이디 입력">
+      <input type="text" name="id" required placeholder="아이디 입력">
       <p class="hint">영문 또는 영문+숫자 조합으로 6~12자리의 아이디를 입력해주세요.</p>
     </div>
 
@@ -118,7 +120,7 @@
     <div class="form-group">
       <label>이메일<span class="required">*</span></label>
       <div style="display: flex; gap: 10px;">
-        <input type="text" name="emailPrefix" placeholder="이메일 입력">
+        <input type="text" name="email" placeholder="이메일 입력">
         <select name="email">
           <option value="">직접 입력</option>
           <option value="gmail.com">gmail.com</option>
@@ -164,6 +166,24 @@
   </form>
 </div>
 
+  <script>
+    let isSameUserId = true;
 
+    async function searchId(){
+      let userId = document.getElementsByName("id")[0].value;
+      let response = await fetch('${path}/teacher/findTeacherById?id='+userId);
+      let result = await response.json();
+
+      if(result){
+        isSameUserId = true;
+        alert("중복된 아이디입니다.");
+        document.getElementsByName("id")[0].focus();
+      }else {
+        isSameUserId = false;
+        alert("사용가능한 아이디 입니다.");
+        document.getElementsByName("id")[0].setAttribute('placeholder',userId);
+      }
+    }
+  </script>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
