@@ -8,4 +8,6 @@ public interface InstructorService {
 
     int insertInstructor(Instructor instructor);
 
+    Instructor searchInstructorById(String id);
+
 }

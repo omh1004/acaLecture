@@ -1,5 +1,6 @@
 package com.mh.ac.teacher.controller;
 
+import com.mh.ac.instructor.model.dto.Instructor;
 import com.mh.ac.teacher.model.dto.Teacher;
 import com.mh.ac.teacher.model.service.TeacherService;
 
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 
 import com.mh.ac.instructor.model.dto.SupInfo;
 import com.mh.ac.teacher.model.dto.LectureMember;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/teacher")
@@ -72,6 +75,26 @@ public class TeacherController {
     public String insertTeacher(@ModelAttribute Teacher teacher) {
         int result = teacherService.insertTeacher(teacher);
         return result > 0 ? "redirect:/" : "commont/error";
+    }
+
+    @PostMapping("/logingo")
+    public String loginend(@RequestParam String userId, @RequestParam String pw, Model model, HttpSession session) {
+        try {
+            Teacher teac = teacherService.searchTeacherById(userId);
+            if(teac != null || teac.getPassword().equals(pw)) {
+                session.setAttribute("loginTeacher",teac);
+                model.addAttribute("loginMember",teac);
+                return "redirect:/";
+            }  else {
+                model.addAttribute("msg","아이디와 패스워드가 일치하지 않습니다.");
+                model.addAttribute("loc","/loginpage");
+                return "common/msg";
+            }
+        } catch (NullPointerException e) {
+            model.addAttribute("msg","아이디와 패스워드가 일치하지 않습니다.");
+            model.addAttribute("loc","/loginpage?pageId=teacher");
+            return "common/msg";
+        }
     }
 
 }

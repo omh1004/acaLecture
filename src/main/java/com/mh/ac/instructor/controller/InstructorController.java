@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
+
 @Log4j2
 @Controller
 @RequestMapping("/instructor")
@@ -45,6 +47,26 @@ public class InstructorController {
     public String insertInstructor(@ModelAttribute Instructor instructor) {
         int result = instructorService.insertInstructor(instructor);
         return result > 0 ? "redirect:/" : "common/error";
+    }
+
+    @PostMapping("/logingo")
+    public String loginend(@RequestParam String userId, @RequestParam String pw, Model model, HttpSession session) {
+        try {
+            Instructor ins = instructorService.searchInstructorById(userId);
+            if(ins != null || ins.getPassword().equals(pw)) {
+                session.setAttribute("loginInstructor",ins);
+                model.addAttribute("loginMember",ins);
+                return "redirect:/";
+            }  else {
+                model.addAttribute("msg","아이디와 패스워드가 일치하지 않습니다.");
+                model.addAttribute("loc","/loginpage?pageId=academy");
+                return "common/msg";
+            }
+        } catch (NullPointerException e) {
+            model.addAttribute("msg","아이디와 패스워드가 일치하지 않습니다.");
+            model.addAttribute("loc","/loginpage?pageId=academy");
+            return "common/msg";
+        }
     }
 
 }

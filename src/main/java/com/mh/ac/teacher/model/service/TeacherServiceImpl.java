@@ -51,4 +51,9 @@ public class TeacherServiceImpl implements TeacherService {
   public int insertTeacher(Teacher teacher) {
       return teacherDao.insertTeacher(session, teacher);
   }
+
+    @Override
+    public Teacher searchTeacherById(String id) {
+        return teacherDao.findTeacherById(session, id);
+    }
 }

@@ -13,4 +13,5 @@ public interface TeacherService {
   public int cancelHire(long no);
   boolean findTeacherById(String id);
   int insertTeacher(Teacher teacher);
+  Teacher searchTeacherById(String id);
 }

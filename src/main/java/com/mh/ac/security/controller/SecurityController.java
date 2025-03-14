@@ -4,12 +4,15 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @Slf4j
 public class SecurityController {
-    @RequestMapping("/loginsuccess")
+
+    @PostMapping("/loginsuccess")
     public String loginend(){
         //로그인한 사용자 정보확인하기
 
@@ -33,8 +36,8 @@ public class SecurityController {
 
     @RequestMapping("/loginpage")
     public String loginpage(Model model, String pageId){
-        if(pageId.equals("instructor")){
-            return "common/instructorLogin";
+        if(pageId.equals("teacher")){
+            return "common/teacherLogin";
         }else if(pageId.equals("academy")) {
             return "common/academyLogin";
         }

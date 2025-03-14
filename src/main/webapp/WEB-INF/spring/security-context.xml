@@ -48,6 +48,8 @@
                         access : 차단, 허용여부에 대한 설정(permitAll(), hasAnyAuthority(,))
          -->
 
+        <security:intercept-url pattern="/instructor/**" access="permitAll()"/>
+        <security:intercept-url pattern="/teacher/**" access="permitAll()"/>
         <security:intercept-url pattern="/academy/login" access="permitAll()"/>
         <security:intercept-url pattern="/resources/**" access="permitAll()"/>
         <security:intercept-url pattern="/logoutsuccess" access="permitAll()"/>

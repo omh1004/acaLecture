@@ -9,7 +9,7 @@
         <h2>선생님 로그인</h2>
     </div>
 
-    <form class="login-form" action="${pageContext.request.contextPath}/loginend.do" method="post">
+    <form class="login-form" action="${pageContext.request.contextPath}/teacher/logingo" method="post">
         <input type="text"  name="userId"  placeholder="아이디" />
         <input type="password"  name="pw" placeholder="비밀번호" />
 

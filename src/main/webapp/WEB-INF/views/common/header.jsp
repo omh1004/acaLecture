@@ -183,7 +183,7 @@
       <div class="dropdown-content">
         <ul>
           <li><a href="${path}/loginpage?pageId=academy">학원인 로그인</a></li>
-          <li><a href="${path}/loginpage?pageId=instructor">강사 로그인</a></li>
+          <li><a href="${path}/loginpage?pageId=teacher">강사 로그인</a></li>
         </ul>
       </div>
     </div>

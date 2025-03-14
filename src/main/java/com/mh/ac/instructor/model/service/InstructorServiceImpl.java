@@ -33,4 +33,9 @@ public class InstructorServiceImpl implements InstructorService {
     public int insertInstructor(Instructor instructor) {
         return instructorDao.insertInstructor(session, instructor);
     }
+
+    @Override
+    public Instructor searchInstructorById(String id) {
+        return instructorDao.findInstructorById(session,id);
+    }
 }
