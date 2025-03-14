@@ -117,7 +117,7 @@
     <div class="form-group">
       <label>아이디<span class="required">*</span></label>
       <div style="display: flex; gap:10px;" >
-        <input type="text" id="inputId" name="acdId" required placeholder="아이디 입력">
+        <input type="text" id="inputId" name="id" required placeholder="아이디 입력">
         <button id="checkId" type="button" onclick="searchId();">중복확인</button>
       </div>
       <p class="hint">영문 또는 영문+숫자 조합으로 6~12자리의 아이디를 입력해주세요.</p>
