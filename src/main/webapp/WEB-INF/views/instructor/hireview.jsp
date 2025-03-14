@@ -126,7 +126,7 @@
     <button class="apply-button" onclick="recruitment()">모집 지원</button>
     <script>
         const recruitment=()=>{
-            location.assign("${path}/instructor/hire?no=${recruit.recNo}");
+            location.assign("${path}/instructor/hire?no=${board.recNo}");
         }
     </script>
 
