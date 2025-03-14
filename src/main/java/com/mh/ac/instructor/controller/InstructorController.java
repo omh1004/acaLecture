@@ -1,6 +1,8 @@
 package com.mh.ac.instructor.controller;
 
 import com.mh.ac.instructor.model.dto.Instructor;
+import com.mh.ac.instructor.model.dto.Recruit;
+import com.mh.ac.instructor.model.dto.SupInfo;
 import com.mh.ac.instructor.model.service.InstructorService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,4 +49,19 @@ public class InstructorController {
         return result > 0 ? "redirect:/" : "common/error";
     }
 
+    // DAO 추가하고 활성화시키기
+    @GetMapping("/hire")
+    public String hire(Model model, @RequestParam(value = "no", defaultValue = "0") long no){
+        System.out.println(no);
+        Recruit recruit = instructorService.getRecruitByNo(no);
+        model.addAttribute("recruit",recruit);
+        return "instructor/hire";
+    }
+
+    @GetMapping("/hireteacher")
+    public String teacherRecruit(Model model, SupInfo supInfo){
+        int result = instructorService.insertSupInfo(supInfo);
+        
+        return "redirect:/"; // index.jsp로 이동
+    }
 }
