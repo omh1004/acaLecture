@@ -176,27 +176,31 @@
 <body>
 <header class="header">
   <h1 onclick="location.href='${path}/'" style="cursor: pointer;">Twilight</h1>
-  <div class="header-right">
-    <span>선생님 찾기</span>
-    <div class="dropdown">
-      <span id="loginBtn" class="dropdown-btn">로그인</span>
-      <div class="dropdown-content">
-        <ul>
-          <li><a href="${path}/loginpage?pageId=academy">학원인 로그인</a></li>
-          <li><a href="${path}/loginpage?pageId=teacher">강사 로그인</a></li>
-        </ul>
+  <c:if test="${loginTeacher == null && loginInstructor == null}">
+      <div class="header-right">
+        <div class="dropdown">
+          <span id="loginBtn" class="dropdown-btn">로그인</span>
+          <div class="dropdown-content">
+            <ul>
+              <li><a href="${path}/loginpage?pageId=academy">학원인 로그인</a></li>
+              <li><a href="${path}/loginpage?pageId=teacher">강사 로그인</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="dropdown">
+          <span id="registerBtn" class="dropdown-btn">회원가입</span>
+          <div class="dropdown-content">
+            <ul>
+              <li><a href="${path}/enroll?pageId=instructor">학원인 회원가입</a></li>
+              <li><a href="${path}/enroll?pageId=teacher">강사 회원가입</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="dropdown">
-      <span id="registerBtn" class="dropdown-btn">회원가입</span>
-      <div class="dropdown-content">
-        <ul>
-          <li><a href="${path}/enroll?pageId=instructor">학원인 회원가입</a></li>
-          <li><a href="${path}/enroll?pageId=teacher">강사 회원가입</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  </c:if>
+  <c:if test="${loginTeacher != null || loginInstructor != null}">
+    <p style="cursor:pointer;" onclick="mypage()">마이페이지</p>
+  </c:if>
 </header>
 
 <script>
@@ -223,6 +227,14 @@
       });
     }
   });
+
+  const mypage=()=>{
+    if("${loginTeacher != null}"){
+      location.assign("${path}/teacher/mypage");
+    }else if("${loginInstructor != null}"){
+      alert("😣");
+    }
+  }
 </script>
 </body>
 </html>

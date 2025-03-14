@@ -75,7 +75,7 @@ public class InstructorController {
             Instructor ins = instructorService.searchInstructorById(userId);
             if(ins != null || ins.getPassword().equals(pw)) {
                 session.setAttribute("loginInstructor",ins);
-                model.addAttribute("loginMember",ins);
+                model.addAttribute("loginInsMember",ins);
                 return "redirect:/";
             }  else {
                 model.addAttribute("msg","아이디와 패스워드가 일치하지 않습니다.");

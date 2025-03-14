@@ -94,7 +94,8 @@
     <div class="hirelist">
         <c:forEach var="board" items="${boardList}">
 
-            <div id="hirelistbox">
+            <!-- 📌 hirelistbox를 클릭하면 해당 게시물로 이동 -->
+            <div class="hirelistbox" onclick="location.href='${path}/board/hireview?recNo=${board.recNo}';" style="cursor: pointer;">
                 <div>
                     <p id="subjtitle">${board.recSubj}</p>
                     <h3 id="minitile">${board.recTitle}</h3>

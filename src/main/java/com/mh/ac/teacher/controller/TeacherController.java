@@ -83,7 +83,7 @@ public class TeacherController {
             Teacher teac = teacherService.searchTeacherById(userId);
             if(teac != null || teac.getPassword().equals(pw)) {
                 session.setAttribute("loginTeacher",teac);
-                model.addAttribute("loginMember",teac);
+                model.addAttribute("loginTeacMember",teac);
                 return "redirect:/";
             }  else {
                 model.addAttribute("msg","아이디와 패스워드가 일치하지 않습니다.");
