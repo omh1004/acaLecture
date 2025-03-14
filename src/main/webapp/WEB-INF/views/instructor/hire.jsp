@@ -52,7 +52,7 @@
                 background-color:#ffffff;
             }
         }
-        section>table td:hover{
+        section>table td.enabled:hover{
             animation:dateSelect 0.1s forwards;
             /*background-color:#66bb6a;*/
         }
@@ -110,6 +110,7 @@
         .time table td.choose{
             border:1px solid #eeeeee;
             border-radius:3px;
+            cursor: pointer;
         }
         .classinfo{
             width:75%;
@@ -143,22 +144,26 @@
             border-radius:5px;
             cursor:pointer;
         }
-        .disabled{
-            color:#EEEEEE;
+        .disabled {
+            color: #888888;
         }
+        .choice {
+            font-weight: bold;
+        }
+
     </style>
     <section>
         <div id="image">
             <img src="${pageContext.request.contextPath}/resources/images/Rectangle-161.png" alt="twilight" width="100%">
         </div>
         <div class="title">
-            <h4>시범강의 예약</h4>
-            <img src="" alt="calendar_icon"><h3>Please select a date and time</h3>
+            <h4>1:1 시범강의 예약</h4>
+            <img src="${path}/resources/images/calendar.png" alt="calendar_icon"><h3 style="margin-left: 5px">Please select a date and time</h3>
         </div>
         <div class="calendarbutton">
-            <img src="" alt="left">     <!-- 이벤트 추가하기 -->
+            <img src="${path}/resources/images/realback.png" alt="left">     <!-- 이벤트 추가하기 -->
             <h3 id="yearMonth"></h3>
-            <img src="" alt="right">    <!-- 이벤트 추가하기 -->
+            <img src="${path}/resources/images/realnext.png" alt="right">    <!-- 이벤트 추가하기 -->
         </div>
         <table id="calendar">
             <tr>
@@ -174,7 +179,7 @@
         </table>
         <div class="time">
             <h5>AM</h5>
-            <table id="amTime">
+            <table id="amTime" tabindex="0" style="outline: none;">
 
             </table>
             <h5>PM</h5>
@@ -244,9 +249,12 @@
 
                 if(calDate.getMonth()>=intStartDate.getMonth() && calDate.getDate()>=intStartDate.getDate() &&
                     calDate.getMonth()<=intEndDate.getMonth() && calDate.getDate()<=intEndDate.getDate()){
+                    div.setAttribute("class","choice");
                     div.addEventListener("click",()=>{
+                        document.getElementById("amTime").focus();
                         document.getElementById("datetime").innerText = (Number(monthDate[0])+1) + "월 " + monthDate[1] + "일";
                     });
+                    td.setAttribute("class","enabled");
                 }else{
                     div.setAttribute("class","disabled");
                 }

@@ -7,11 +7,11 @@
 <style>
     .container {
         width: 80%;
-        margin: 0 auto;
+        margin: 40px auto;
         background: white;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     }
     table {
         width: 100%;
@@ -41,32 +41,52 @@
         display: block;
         margin: 20px auto 0;
     }
+    #btns {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    #btn1, #btn2 {
+        all:unset;
+        width: 40px;
+        height: 30px;
+        padding: 3px 7px;
+        border-radius: 10px;
+        text-align: center;
+        color:#ffffff;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    #btn1 {
+        background-color: #888888;
+    }
+    #btn2 {
+        background-color: red;
+    }
 </style>
+
 
 <section style="min-height: 100%;">
     <div class="container" style="min-height: 600px;">
-        <div>
-            <button>수정</button>
-            <button>삭제</button>
+        <div id="btns">
+            <button id="btn1">수정</button>
+            <button id="btn2">삭제</button>
         </div>
         <table>
             <tr>
-                <th>제목</th>
-                <td>${board.recTitle}</td>
-                <th>강의 시작일</th>
+                <th>접수 시작일</th>
                 <td>${board.intStartDate}</td>
                 <th>접수 마감일</th>
                 <td>${board.intEndDate}</td>
+                <th>장소</th>
+                <td>${board.intState}</td>
             </tr>
             <tr>
                 <th>시간</th>
                 <td>09:00~18:00</td>
-                <th>장소</th>
-                <td>${board.intState}</td>
                 <th>급여</th>
                 <td>${board.salary}</td>
-            </tr>
-            <tr>
                 <th>강의 유형</th>
                 <td>
                     <c:choose>
@@ -75,6 +95,8 @@
                     </c:choose>
                 </td>
             </tr>
+
+
 
         <%--            <tr>--%>
 <%--                <th>제목</th>           <!-- 바꾸기 -->--%>
@@ -93,15 +115,19 @@
 <%--                <td>${recruit.lecTarget}</td>       <!-- ${ recruit.lecTarget }-->--%>
 <%--            </tr>--%>
         </table>
-        <div class="image-container">
-            <p>${recruit.recContent}</p>
-            <img src="/resources/images/image-24.png" alt="보고 자료 이미지" width="400">
-        </div>
-        <button class="apply-button" onclick="recruitment()">모집 지원</button>
+
+
+
+        <p>${board.recContent}</p>
+
+
+
     </div>
+    <button class="apply-button" onclick="recruitment()">모집 지원</button>
     <script>
         const recruitment=()=>{
             location.assign("${path}/instructor/hire?no=${recruit.recNo}");
         }
     </script>
+
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

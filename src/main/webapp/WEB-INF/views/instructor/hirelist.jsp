@@ -73,6 +73,9 @@
         .pagination a.arrow {
             border: none;
         }
+        #rectitle {
+            text-decoration: none;
+        }
     </style>
     <section style="min-height: 100%;">
         <div class="container">
@@ -94,7 +97,7 @@
                 <c:forEach var="item" items="${hireList}">
                     <tr>
                         <td class="blue-text">
-                            <a href="${path}/board/hireview?recNo=${item.recNo}" class="blue-text">${item.recTitle}</a>
+                            <a href="${path}/board/hireview?recNo=${item.recNo}" id="rectitle" class="blue-text">${item.recTitle}</a>
                         </td>
                         <td>${item.recSubj}</td>
                         <td>${item.intStartDate}</td>

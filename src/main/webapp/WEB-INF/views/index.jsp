@@ -31,12 +31,12 @@
         min-height:250px;
         padding:2%;
         border:1px solid #CBC7C7;
+        border-radius: 15px;
         box-shadow: 5px 5px 3px rgba(0, 0, 10, 0.5);
-        text-align:start;
         margin:40px;
     }
     #content>.hirelist>div>div{
-        height:50%;
+        height:40%;
     }
     #content>.hirelist>div>div:last-child{
         display:flex;
@@ -67,7 +67,22 @@
         border-radius: 1vw;
         padding: 1vw 2vw;
         font-weight: bold;
+        cursor: pointer;
     }
+
+    #subjtitle {
+        color:#007bff;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+    }
+    #locationimg, #calender, #clock {
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+        background-position: center;
+    }
+
+
 </style>
 
 <section id="content" style="min-height: 100%;">
@@ -79,18 +94,23 @@
     <div class="hirelist">
         <c:forEach var="board" items="${boardList}">
 
-            <div class="hirelistbox">
+            <div id="hirelistbox">
                 <div>
-                    <p>${board.recSubj}</p>
-                    <h3>${board.recTitle}</h3>
+                    <p id="subjtitle">${board.recSubj}</p>
+                    <h3 id="minitile">${board.recTitle}</h3>
                 </div>
-                <div>
+                <div id="minibox">
                     <div>
-                        <p>${board.intState}</p>
-                        <p>${board.intStartDate}</p>
+                        <img id="locationimg" src="${path}/resources/images/locationimg.png">
+                        <p id="instate">${board.intState}</p>
                     </div>
                     <div>
-                        <p>${board.intStartTime}</p>
+                        <img id="calender" src="${path}/resources/images/calendar.png">
+                        <p id="instartdate">${board.intStartDate}</p>
+                    </div>
+                    <div>
+                        <img id="clock" src="${path}/resources/images/clock.svg">
+                        <p id="instarttime">${board.intStartTime}</p>
                     </div>
                 </div>
             </div>

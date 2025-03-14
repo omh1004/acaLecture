@@ -3,6 +3,9 @@ package com.mh.ac.instructor.model.service;
 
 import com.mh.ac.instructor.model.dao.InstructorDao;
 import com.mh.ac.instructor.model.dto.Instructor;
+import com.mh.ac.instructor.model.dto.Recruit;
+import com.mh.ac.instructor.model.dto.SupInfo;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +37,16 @@ public class InstructorServiceImpl implements InstructorService {
         return instructorDao.insertInstructor(session, instructor);
     }
 
+    @Override
+    public Recruit getRecruitByNo(long no){
+        return instructorDao.getRecruitByNo(session, no);
+    }
+
+    @Override
+    public int insertSupInfo(SupInfo supInfo){
+        return instructorDao.insertSupInfo(session, supInfo);
+    }
+    
     @Override
     public Instructor searchInstructorById(String id) {
         return instructorDao.findInstructorById(session,id);

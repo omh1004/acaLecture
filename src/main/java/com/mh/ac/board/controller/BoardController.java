@@ -99,6 +99,11 @@ public class BoardController {
         return "instructor/hireview";  // ✅ JSP 파일 이동
     }
 
-
+    // 구인 등록 처리
+    @PostMapping("/instructor/hirewrite")
+    public String writeBoard(@ModelAttribute Board board) {
+        int result = boardService.insertBoard(board);
+        return result > 0 ? "redirect:/instructor/hirelist" : "common/error";
+    }
 
 }
