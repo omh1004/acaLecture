@@ -88,6 +88,21 @@
     .required {
       color: red;
     }
+    #checkId {
+      all:unset;
+      text-align: center;
+      padding: 2px 5px;
+      border: none;
+      border-radius: 10px;
+      width: 60px;
+      height: 30px;
+      background-color: #4A4A4C;
+      color: #ffffff;
+      cursor: pointer;
+    }
+    #inputId {
+      width: 93%;
+    }
   </style>
 </head>
 <body>
@@ -101,9 +116,11 @@
 
     <div class="form-group">
       <label>아이디<span class="required">*</span></label>
-      <input type="text" name="acdId" required placeholder="아이디 입력">
+      <div style="display: flex; gap:10px;" >
+        <input type="text" id="inputId" name="acdId" required placeholder="아이디 입력">
+        <button id="checkId" type="button" onclick="searchId();">중복확인</button>
+      </div>
       <p class="hint">영문 또는 영문+숫자 조합으로 6~12자리의 아이디를 입력해주세요.</p>
-      <button type="button" onclick="searchId();">중복확인</button>
     </div>
 
     <div class="form-group">
