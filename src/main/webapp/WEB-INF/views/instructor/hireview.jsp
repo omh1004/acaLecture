@@ -124,7 +124,7 @@
     </div>
     <script>
         const recruitment=()=>{
-            location.assign("${path}/instructor/hire?no=${recruit.recNo}");
+            location.assign("${path}/instructor/hire?no=${board.recNo}");
         }
     </script>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
