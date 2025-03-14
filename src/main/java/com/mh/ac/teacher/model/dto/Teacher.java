@@ -19,9 +19,13 @@ import java.util.List;
 @Builder
 public class Teacher implements Serializable, UserDetails {
 
+    private Integer lemNo;
     private String id;
     private String password;
-    private String username;
+    private String name;
+    private String email;
+    private String address;
+    private String unvName;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

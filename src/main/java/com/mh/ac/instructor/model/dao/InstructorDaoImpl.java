@@ -9,8 +9,13 @@ import org.apache.ibatis.session.SqlSession;
 public class InstructorDaoImpl implements InstructorDao {
 
     @Override
-    public Instructor findInstructorById(SqlSession sqlSession, String username) {
-        return null;
+    public Instructor findInstructorById(SqlSession session, String id) {
+        return session.selectOne("instructor.findInstructorById", id);
+    }
+
+    @Override
+    public int insertInstructor(SqlSession session, Instructor instructor) {
+        return session.insert("instructor.insertInstructor", instructor);
     }
 
     @Override

@@ -25,8 +25,7 @@ public class MyWebAppConfig implements WebMvcConfigurer {
     //jsp 화면으로 전환해주는 기능
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/member/enrollmember.do")
-                .setViewName("member/enrollmember");
+        registry.addViewController("/member/enrollmember.do").setViewName("member/enrollmember");
         registry.addViewController("/board/boardform.do").setViewName("board/boardform");
         registry.addViewController("/chatting/chattingpage").setViewName("/chatting/chattingpage");
 

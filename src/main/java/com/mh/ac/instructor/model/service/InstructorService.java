@@ -1,9 +1,11 @@
 package com.mh.ac.instructor.model.service;
 
-import com.mh.ac.instructor.model.dto.Recruit;
-import com.mh.ac.instructor.model.dto.SupInfo;
+import com.mh.ac.instructor.model.dto.Instructor;
 
 public interface InstructorService {
-  public Recruit getRecruitByNo(long no);
-  public int insertSupInfo(SupInfo supInfo);
+
+    boolean findInstructorById(String id);
+
+    int insertInstructor(Instructor instructor);
+
 }
