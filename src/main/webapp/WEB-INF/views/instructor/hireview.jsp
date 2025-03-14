@@ -7,11 +7,11 @@
 <style>
     .container {
         width: 80%;
-        margin: 0 auto;
+        margin: 40px auto;
         background: white;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     }
     table {
         width: 100%;
@@ -41,13 +41,36 @@
         display: block;
         margin: 20px auto 0;
     }
+    #btns {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    #btn1, #btn2 {
+        all:unset;
+        width: 40px;
+        height: 30px;
+        padding: 3px 7px;
+        border-radius: 10px;
+        text-align: center;
+        color:#ffffff;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    #btn1 {
+        background-color: #888888;
+    }
+    #btn2 {
+        background-color: red;
+    }
 </style>
 
 <section style="min-height: 100%;">
     <div class="container" style="min-height: 600px;">
-        <div>
-            <button>수정</button>
-            <button>삭제</button>
+        <div id="btns">
+            <button id="btn1">수정</button>
+            <button id="btn2">삭제</button>
         </div>
         <table>
             <tr>

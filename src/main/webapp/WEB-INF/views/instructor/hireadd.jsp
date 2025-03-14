@@ -129,15 +129,6 @@
         height: 300px;
         position: relative;
       }
-      .red-dot {
-        width: 6px;
-        height: 6px;
-        background-color: red;
-        border-radius: 50%;
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-      }
     </style>
     <section style="min-height: 100%;">
       <div class="container" style="min-height: 700px;">
@@ -183,7 +174,6 @@
 
         <div class="editor-area">
           <!-- 에디터 내용 영역 -->
-          <div class="red-dot"></div>
         </div>
       </div>
     </section>
